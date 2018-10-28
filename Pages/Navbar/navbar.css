@@ -96,3 +96,7 @@ nav .navigation-icon {
 .hidden {
     display: none;
 }
+
+.no-overflow {
+    overflow: hidden;
+}
