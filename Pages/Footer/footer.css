@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+footer {
+  display: grid;
+  width: 100%;
+  bottom: 0;
+  position: fixed;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  font-family: Calibre, Helvetica, Arial, sans-serif;
+  background-color: rgb(250, 232, 247);
+}
+footer .paw {
+  width: 75px;
+  height: 75px;
+  transform: rotate(45deg);
+  margin: 25px;
+}
+footer .grid-item p{
+  font-size: 20px;
+}
+.grid-item {
+  padding: 20px;
+  font-size: 15px;
+  text-align: center;
+}
+@media screen and (max-width: 835px) {
+  footer .grid-item div {
+    display: none;
+  }
+  footer .paw {
+    display: none;
+  }
+}
