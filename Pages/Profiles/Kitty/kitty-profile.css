@@ -1,0 +1,155 @@
+.kitty-profile-img{
+    height: 300px;
+    width: 300px;
+    background-color:pink;   
+}
+
+.price-img{
+    height: 30px;
+    width: 30px;
+    background: none;
+}
+
+.kitty-info{
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.info-container{
+    margin: 0 50px 0 50px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.price-container{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    margin:30px 0 30px 0;
+    border-radius: 15px; 
+    width:170px;
+    background: rgb(223, 220, 220);
+}
+
+.price-container p{
+    margin-left: 10px;
+}
+
+.name_plus_owner{
+    display:flex;
+    flex-direction: row;
+}
+
+.owner-container{
+    display:flex;
+    flex-direction: row;
+    margin-left:40px;   
+}
+
+.owner-img{
+    height: 30px;
+    width: 40px;
+    margin-right: 10px;
+}
+
+.owner-name{
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 3px;
+    cursor:pointer;
+}
+
+.owner-txt{
+    display:flex;
+    flex-direction: column;
+    font-weight: 100;
+    font-size: 10px;
+}
+
+.bio-container{
+    padding:20px 0 30px 0;
+}
+
+.empty-img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border:0.5px solid rgb(168, 167, 167);
+    background: rgb(228, 225, 225);  
+}
+
+.cattribut-card{
+    margin:30px 0 0 0;
+    display:inline-flex;
+    flex-direction: row;
+    align-items: center;
+    width: 200px;
+}
+
+.cattribut-name{
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+
+.cattribut-info{
+    display:inline-flex;
+    flex-direction: column;
+    font-weight: 100;
+    font-size: 15px;
+    margin-left: 15px;
+}
+
+.cattributes-list{
+    width:100%;
+    margin-bottom: 30px;
+}
+
+.mewtations-diamond{
+    margin-left :5px;
+    width:40px;
+    height:40px;
+    background-image: url(https://www.cryptokitties.co/images/cattributes/bronze-lg.svg);
+}
+
+.mewtations-card{
+    height: 60px;
+    width: 150px;
+    padding:3px;
+    margin-right: 10px;
+    background-color: #e9f4ff;
+    border-radius:3.3rem;
+    border: 1px solid blue;
+}
+
+.mewtations-card .cattribut-info{
+    font-size:11px;   
+    margin-left:2px;
+}
+
+.mewtations-card .cattribut-name{
+    font-size:13px;
+}
+
+.kitty-list{
+    width:100%;
+    margin:20px 0 30px 0;
+}
+
+.kitty-img{
+    width: 150px;
+    height: 150px;
+}
+
+.kitty-card{
+    margin:10px;
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: pink;
+    width: 170px;
+    height: 170px;
+}
+
