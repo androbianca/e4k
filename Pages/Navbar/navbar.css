@@ -8,7 +8,7 @@ body {
     background-color: #f3f1ee;
     background-image: url(https://www.cryptokitties.co/images/pattern-tile.svg);
     background-size: 44rem auto;
-    font-family: Calibre,Helvetica,Arial,sans-serif;
+    font-family: Calibre, Helvetica, Arial, sans-serif;
     color: #3a3a3a;
 }
 
@@ -40,9 +40,9 @@ nav .logo-icon {
     height: 50px;
 }
 
-nav .logo:hover .logo-icon{
-    background-image: url(https://www.cryptokitties.co/icons/logo-hover.gif);   
-    height: 70px; 
+nav .logo:hover .logo-icon {
+    background-image: url(https://www.cryptokitties.co/icons/logo-hover.gif);
+    height: 70px;
 }
 
 nav .logo p {
@@ -66,12 +66,33 @@ nav .navigation-icon {
     background-size: contain;
 }
 
-nav .navigation {
-    position: absolute;
+.navigation {
+    width: 300px;
+    height: 100%;
+    right: 0;
+    top: 0;
+    background-color: #fff;
+    position: fixed;
     margin-top: 100px;
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+    font-weight: bold;    
+}
+
+.navigation ul li {
+    background-color: pink;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    height: 30px;
+    padding-top: 6px;
+    text-align: center;
+    cursor: pointer;
 }
 
 .hidden {
     display: none;
 }
-
