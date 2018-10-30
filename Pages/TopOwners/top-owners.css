@@ -1,11 +1,18 @@
 
-.wrapper {
-    padding:50px;  
+.main-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding:40px;  
+
 }
 
-h1 {
-    opacity: 0.5;
+.wrapper {
+    margin-top:100px;
+    width: 100%;    
 }
+
 
 .wrapper ol {
     list-style: none;
@@ -15,7 +22,7 @@ h1 {
     height:100px;
     width:100px;
     border-radius: 50%; 
-    z-index:-1;
+    border:1px solid rgb(172, 172, 172); 
 }
 
 .top3-wrapper{
@@ -121,12 +128,15 @@ li:nth-of-type(2):not(:hover) .user-img {
 
 .owner-card {
     padding:10px;
-    width: 400px;
+    width: 500px;
     margin:0 0 30px 30px;
     display: flex;
     align-items: center;
     flex-direction: row;
     border-bottom:0.5px solid rgb(255, 194, 242,.7);
+    background: white;
+    box-shadow: 10px 5px 5px grey;
+    border-radius: 25px;
 }
 
 .owner-card p {
@@ -142,6 +152,8 @@ li:nth-of-type(2):not(:hover) .user-img {
 .card-img {
     height: 70px;
     width:70px;
+    border:1px solid rgb(172, 172, 172); 
+    border-radius:50%;
 }
 
 .owner-name {
@@ -157,7 +169,8 @@ li:nth-of-type(2):not(:hover) .user-img {
 .img{
     height: 30px;
     width: 30px;
-    margin-right:10px;   
+    margin-right:10px;  
+   
 }
 
 .kitties-count {
@@ -169,4 +182,14 @@ li:nth-of-type(2):not(:hover) .user-img {
     width:150px;
     background:rgb(243, 197, 204, .5);
     border-radius: 15px;
+}
+
+.title-txt {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    /* width: 70%; */
+    padding:30px;
+    border-bottom: 1px solid rgb(197, 183, 197);
+    color: rgb(165, 165, 165); 
 }

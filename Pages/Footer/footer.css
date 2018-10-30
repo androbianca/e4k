@@ -8,7 +8,7 @@ footer {
   display: grid;
   width: 100%;
   bottom: 0;
-  position: fixed;
+  position: static;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   font-family: Calibre, Helvetica, Arial, sans-serif;
   background-color: rgb(250, 232, 247);
