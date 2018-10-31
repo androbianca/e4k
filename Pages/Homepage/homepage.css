@@ -1,0 +1,39 @@
+.header {
+    width: 100%;
+    height: calc(100vh - 100px);
+    background-image: url(../Images/homepage-header.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.info .container {
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 60%;
+    height: 50%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info .container img {
+    padding-right: 50px;
+}
+
+.info .container .container-text h1 {
+    margin-bottom: 20px;
+}
+
+.info .container .container-text p {
+    text-align: justify;
+    text-justify: inter-word;
+}
