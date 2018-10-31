@@ -41,7 +41,32 @@
     }
 
     .container .kitties {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        padding-top: 50px;  
         height: calc(100% - 150px);
         width: 100%;
-        background-color: black;
+    }
+
+    .container .kitties .kitty {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: whitesmoke;
+        min-width: 15%;
+        min-height: 40%;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+    .container .kitties .kitty h4 {
+        transform: translate(0, -100%);
+    }
+
+    .container .kitties .kitty img {
+        width: 150px;
+        height: 150px;
     }
