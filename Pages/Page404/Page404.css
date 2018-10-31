@@ -1,0 +1,18 @@
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 60px;  
+}
+.error-code {
+  width: 40%;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 20px;
+}
+.error-message {
+  display: flex;
+  font-family: Calibre, Helvetica, Arial, sans-serif;
+  font-size: 20px;
+}
