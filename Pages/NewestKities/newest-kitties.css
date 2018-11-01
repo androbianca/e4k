@@ -4,6 +4,7 @@
     width: 70%;
     padding:30px;
     border-bottom: 1px solid rgb(197, 183, 197);
+    margin-bottom: 30px;
     color: rgb(165, 165, 165); 
 }
 
@@ -16,10 +17,6 @@
     padding:40px;   
 }
 
-.wrapper {   
-    width: 80%;
-}
-
 .grid {
     display: grid;
     justify-items: center; 
@@ -28,17 +25,13 @@
 }
 
 .areaA {
-    margin-top: 100px;
-       
-}
-
-.areaB {
-    
+    margin-top: 100px;     
 }
 
 .areaC {
     margin-top: 50px;
 }
+
 .content-box {
     display: flex;
     align-items: center;
@@ -49,7 +42,7 @@
     position: relative;
     margin:40px;
     padding: 80px 40px 60px;
-    margin-top:100px;
+    /* margin-top:100px; */
     border: solid 1px #ddd;
     background-color: #fff;  
 }
@@ -91,6 +84,13 @@
  .title-txt {
      font-size: 20px;
  }
+ .areaA {
+    margin-top: 15px;     
+}
+
+.areaC {
+    margin-top: 15px;
+}
 }
       
    
