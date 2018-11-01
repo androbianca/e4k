@@ -9,8 +9,11 @@
 }
 
 .wrapper {
-    margin-top:100px;
-    width: 100%;    
+    margin:40px 100px 20px 100px;  
+    display: flex;
+    justify-content: center; 
+    flex-direction: column;
+    align-items: center;
 }
 
 
@@ -19,8 +22,7 @@
 }
 
 .user-img{
-    height:100px;
-    width:100px;
+    height:35%;
     border-radius: 50%; 
     border:1px solid rgb(172, 172, 172); 
 }
@@ -128,7 +130,7 @@ li:nth-of-type(2):not(:hover) .user-img {
 
 .owner-card {
     padding:10px;
-    width: 500px;
+    width: 100%;
     margin:0 0 30px 30px;
     display: flex;
     align-items: center;
@@ -143,6 +145,10 @@ li:nth-of-type(2):not(:hover) .user-img {
     margin-bottom: 3px;
 }
 
+.content p{
+    size:12px;
+}
+
 .card-info {
     margin-left:10px;
     display: flex;
@@ -150,8 +156,7 @@ li:nth-of-type(2):not(:hover) .user-img {
 }
 
 .card-img {
-    height: 70px;
-    width:70px;
+    height: 12%;
     border:1px solid rgb(172, 172, 172); 
     border-radius:50%;
 }
@@ -170,6 +175,7 @@ li:nth-of-type(2):not(:hover) .user-img {
     height: 30px;
     width: 30px;
     margin-right:10px;  
+    border-radius: 20px;
    
 }
 
@@ -188,8 +194,40 @@ li:nth-of-type(2):not(:hover) .user-img {
     display: flex; 
     justify-content: center;
     align-items: center;
-    /* width: 70%; */
-    padding:30px;
+    width: 55%;;
+    margin:0 0 50px 50px;
+    padding-bottom: 20px;
     border-bottom: 1px solid rgb(197, 183, 197);
     color: rgb(165, 165, 165); 
+    font-weight: bold;
+    font-size: 30px;
 }
+
+.top3-list{
+    display: none;
+}
+
+@media screen and (max-width: 835px) {
+       
+.top3-container{
+     display: none;      
+}
+
+ .top3-list{
+     display: block;   
+}
+
+.owner-card{
+    flex: auto;
+    width: 80%;
+ }
+
+ .kitties-count{
+     display: none;
+ }
+
+ .title-txt{
+    font-size: 20px;
+ }
+}
+      

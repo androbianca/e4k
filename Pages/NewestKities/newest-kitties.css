@@ -1,4 +1,3 @@
-
 .title-txt {
     display: flex; 
     justify-content: center;
@@ -14,7 +13,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding:40px;
+    padding:40px;   
 }
 
 .wrapper {   
@@ -25,13 +24,21 @@
     display: grid;
     justify-items: center; 
     width: 100%;
-    grid-template-columns:1fr 1fr;      
+    grid-template-columns:1fr 1fr 1fr;      
+}
+
+.areaA {
+    margin-top: 100px;
+       
 }
 
 .areaB {
-       margin-top: 100px;
+    
 }
 
+.areaC {
+    margin-top: 50px;
+}
 .content-box {
     display: flex;
     align-items: center;
@@ -55,6 +62,7 @@
     height: 150px;
     width: 150px;
     background: rgb(146, 146, 207);
+    border-radius:20px;
 }
 
 .content-box__txt {
@@ -79,6 +87,9 @@
        
 .grid {
   grid-template-columns:1fr ;
+ }
+ .title-txt {
+     font-size: 20px;
  }
 }
       
