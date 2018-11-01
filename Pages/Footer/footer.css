@@ -7,7 +7,7 @@
 footer {
   display: grid;
   width: 100%;
-  position: absolute;
+  position: relative;
   right: 0;
   bottom: 0;
   left: 0;
@@ -30,7 +30,7 @@ footer .grid-item p{
   font-size: 15px;
   text-align: center;
 }
-@media screen and (max-width: 835px) {
+@media screen and (max-width: 860px) {
   footer .grid-item div {
     display: none;
   }
