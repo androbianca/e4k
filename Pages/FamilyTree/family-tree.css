@@ -80,3 +80,9 @@
     margin-top: 15px;
   }
 }
+
+.family-value {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+}
