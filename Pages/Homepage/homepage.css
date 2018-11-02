@@ -70,7 +70,7 @@ input[type=submit] {
     }
 
     .info .container img {      
-        padding-right: none;
+        padding-right: 0;
         height: 50%;
         margin-bottom: 20px;
     }

@@ -147,7 +147,7 @@ li:nth-of-type(2):not(:hover) .user-img {
 }
 
 .content p{
-    size:12px;
+    font-size:18px;
 }
 
 .card-info {
