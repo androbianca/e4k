@@ -59,17 +59,11 @@
   margin-bottom: 20px;
 }
 
-.price-container__img {
-  height: 30px;
-  width: 30px;
-}
 
-.content-box__price-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  cursor: pointer;
-  margin-top: 10px;
+.family-value {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 5px;
 }
 
 @media screen and (max-width: 835px) {
@@ -79,10 +73,4 @@
   .area {
     margin-top: 15px;
   }
-}
-
-.family-value {
-  background-color: #fff;
-  padding: 15px;
-  border-radius: 5px;
 }
