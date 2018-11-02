@@ -73,7 +73,7 @@ nav .navigation-icon {
     right: 0;
     top: 0;
     background-color: #fff;
-    position: fixed;
+    position: absolute;
     margin-top: 100px;
 }
 
@@ -81,7 +81,7 @@ nav .navigation-icon {
     list-style: none;
     padding: 20px;
     margin: 0;
-    font-weight: bold;    
+    font-weight: bold;
 }
 
 .navigation ul li {
@@ -92,6 +92,11 @@ nav .navigation-icon {
     padding-top: 6px;
     text-align: center;
     cursor: pointer;
+}
+
+.navigation ul li a {
+    text-decoration: none;
+    color: #3a3a3a;
 }
 
 .hidden {
