@@ -160,6 +160,15 @@
     border-radius: 20px; 
 }
 
+.family-tree {
+    display: block;
+    background-color: lightpink;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    margin-left: 50px;
+}
+
 @media screen and (max-width: 835px) {
  
     .kitty-info{
