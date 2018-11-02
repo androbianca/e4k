@@ -1,0 +1,50 @@
+input[type=text], select {
+    height: 35px;
+    width: 100%;
+    padding: 2px;
+    margin: 8px 0;   
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    display: block;
+}
+
+input[type=submit] {
+    background-color: #c47cda;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+	width: 100%;
+}
+
+input[type=submit]:hover {
+    background-color: grey;
+}
+
+.form-wrapper{
+    height: 420px;
+    width: 350px;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgb(189, 181, 181);
+    background: white;
+}
+
+.form-wrapper label{
+    margin: 3px;
+}
+
+.container{
+    margin: 20px 0 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit-btn{
+  margin: 10px;
+  height: 30px;
+}
