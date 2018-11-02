@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,89 +10,90 @@
     <link rel="stylesheet" type="text/css" href="../Footer/footer.css">
     <title>Form</title>
 </head>
+
 <body>
-    
-        <nav>
-                <div class="logo">
-                    <div class="logo-icon"></div>
-                    <p>Eye for Kitties</p>
+
+    <nav>
+        <div class="logo">
+            <div class="logo-icon"></div>
+            <p>Eye for Kitties</p>
+        </div>
+
+        <div class="menu">
+            <div class="navigation-icon" onclick="toggleMenu()"></div>
+        </div>
+    </nav>
+
+    <div class="navigation hidden">
+        <ul>
+            <li>
+                <a href="../Homepage/homepage.html">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="../Profiles/User/user-profile.html">
+                    My Profile
+                </a>
+            </li>
+            <li>
+                <a href="../NewestKities/newest-kitties.html">
+                    New Kitties
+                </a>
+            </li>
+            <li>
+                <a href="../TopOwners/top-owners.html">
+                    Top Users
+                </a>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="form-wrapper">
+
+            <form>
+                <label>Choose something:</label>
+                <select id="month1" name="month1">
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                </select>
+
+                <label>Choose something:</label>
+                <select id="month2" name="month2">
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                </select>
+
+                <label>Choose something:</label>
+                <select id="month3" name="month3">
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                </select>
+
+                <label>Choose something:</label>
+                <select id="month4" name="month4">
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                </select>
+
+                <label>Choose type:</label>
+                <input type="radio" name="svg" value="1"> SVG
+                <input type="radio" name="png" value="2"> PNG
+                <div class="submit-btn">
+                    <input type="submit" value="Generate">
                 </div>
-        
-                <div class="menu">
-                    <div class="navigation-icon" onclick="toggleMenu()"></div>
-                </div>
-            </nav>
-        
-            <div class="navigation hidden">
-                    <ul>
-                        <li>
-                            <a href="../Homepage/homepage.html">
-                               Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="../Profiles/User/user-profile.html">
-                                My Profile
-                            </a>  
-                        </li>
-                        <li>
-                            <a href="../NewestKities/newest-kitties.html">
-                                New Kitties
-                            </a>             
-                        </li>
-                        <li>
-                            <a href="../TopOwners/top-owners.html">
-                             Top Users
-                            </a>  
-                        </li>
-                       
-                    </ul>
-                </div>
-        
-<div class="container">
-<div class="form-wrapper">
 
-<form>
-    <label>Choose something:</label>
-    <select id="month1" name="month1">
-        <option value="1">January</option>
-        <option value="2">February</option>
-        <option value="3">March</option>
-        <option value="4">April</option>
-	</select>  
-	
-    <label>Choose something:</label>
-    <select id="month2" name="month2">
-        <option value="1">January</option>
-        <option value="2">February</option>
-        <option value="3">March</option>
-    </select>  
-    
-    <label>Choose something:</label>
-        <select id="month3" name="month3">
-        <option value="1">January</option>
-        <option value="2">February</option>
-        <option value="3">March</option>
-    </select> 
-
-    <label>Choose something:</label>
-    <select id="month4" name="month4">
-        <option value="1">January</option>
-        <option value="2">February</option>
-        <option value="3">March</option>
-    </select> 
-
-    <label>Choose type:</label> 
-    <input  type="radio" name="svg" value="1"> SVG
-    <input  type="radio" name="png" value="2"> PNG 
-  <div class="submit-btn">
-  <input type="submit" value="Generate">
-</div>
-
-</form>
-</div>
-</div>
-<footer>
+            </form>
+        </div>
+    </div>
+    <footer>
         <div class="grid-item"></div>
         <div class="grid-item">
             <p>
@@ -141,4 +143,5 @@
     </footer>
     <script src="../Navbar/navbar.js"></script>
 </body>
+
 </html>
