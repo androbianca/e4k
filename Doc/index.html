@@ -38,7 +38,7 @@
     <section id="user-type">
         <h2>Tipuri de utilizatori</h2>
         <p property="schema:type">
-            <p>Un singur tip utilizator, ce ii include pe toti, deoarece aplicatia nu foloseste sisteme de log-in/sign-in,
+            <p>Nu exista tipuri specifice de utilizatori, deoarece aplicatia nu foloseste sisteme de log-in/sign-in,
                 si nici nu are o baza de date ce trebuie gestionata.</p>
         </p>
     </section>
@@ -111,16 +111,16 @@
         <p style="font-weight:600;">1.Date proprii</p>
         <p property="schema:description">Aplicatia nu are o baza de date in care sa fie stocate datele deoarece informatiile
             sunt preluate direct de la sursa prin API-uri publice puse la dispozitie.</p>
-        <p style="font-weight:600;">1.Date externe</p>
+        <p style="font-weight:600;">2.Date externe</p>
         <p property="schema:description">Pentru a folosi informatiile primite prin requesturi api, ele vor fi transformate
             in obiecte de tip javascript.Fisierele json sunt preluate si mapate la obiecte javascript.</p>
     </section>
 
     <section id="storage">
         <h2>Soluţiile de stocare disponibile la nivel de client</h2>
-        <p property="schema:description">Elementele(pisica/proprietar) accesate in trecut sunt
-            salvate in liste. Inainte ca un request api sa fie facut, listele sunt verificate in functie de id-ul elementului,
-            iar daca exista deja in listele respective, requestul nu va mai avea loc.</p>
+        <p property="schema:description">Elementele(pisica/proprietar) accesate in trecut sunt salvate in liste. Inainte
+            ca un request api sa fie facut, listele sunt verificate in functie de id-ul elementului, iar daca exista deja
+            in listele respective, requestul nu va mai avea loc.</p>
     </section>
 
     <section id="use-cases">
@@ -284,5 +284,16 @@
 
         <img src="../Application arhitecture/UML diagrams/parent-profile.jpeg" height="600" width="800">
     </section>
+
+    <section id="references">
+        <h2>References</h2>
+        <ol>
+            <li style="font-size:large;"> https://blockgeeks.com/guides/cryptokitties/</li>
+            <li style="font-size:large;">https://www.cryptokitties.co/</li>
+            <li style="font-size:large;">https://www.w3schools.com/css/ </li>
+            <li style="font-size:large;">https://github.com/w3c/scholarly-html </li>
+        </ol>
+    </section>
 </body>
+
 </html>
