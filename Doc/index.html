@@ -30,29 +30,34 @@
     <section id="introduction" role="doc-introduction">
         <h2>Introducere</h2>
         <p style="font-size:large;">
-            Aceasta aplicatie web ofera oportunitatea de a putea vedea evolutia pisicilor digitale cum ar fi cei mai importanti proprietari, cele mai noi pisici, profilul unei pisici, profilul unui proprietar si arborele genealogic al unei pisici.
+            Aceasta aplicatie web ofera oportunitatea de a putea vizualiza evolutia pisicilor digitale cum ar fi cei mai importanti proprietari,
+            cele mai noi pisici, profilul unei pisici, profilul unui proprietar si arborele genealogic al unei pisici.
         </p>
     </section>
 
     <section id="user-type">
         <h2>Tipuri de utilizatori</h2>
         <p property="schema:type">
-            <p>Un singur tip utilizator, ce ii include pe toti, deoarece aplicatia nu foloseste sisteme de log-in/sign-in, si nici nu are nevoie de administrator pentru ca nu exista o baza de date.</p>
-            </p>
+            <p>Un singur tip utilizator, ce ii include pe toti, deoarece aplicatia nu foloseste sisteme de log-in/sign-in,
+                si nici nu are o baza de date ce trebuie gestionata.</p>
+        </p>
     </section>
 
- <section id="concepts-on-design">
-        <h2 >Arhitectura generala</h2>
+    <section id="concepts-on-design">
+        <h2 property="schema:blueprint">Arhitectura generala</h2>
         <ul>
             <p style="font-size:large;" property="schema:description">
-            Aplicatia este de tip SPA, si consta in faptul ca pagina curenta este suprascrisa dinamic, nu este incarcata o noua pagina de fiecare data.
+                Structura SPA
             </p>
             <img src="C:\Users\Bandro\Documents\GitHub\e4k\Application arhitecture\SPA.jpeg" height="600" width="800">
-            <p property="schema:description">Avem pagina principala, ce va primi datele ce trebuie afisate in cadrul ei.Ea este compusa din navbar, content si footer.
-            Content este partea paginii ce variaza in functie de navigarile utilizatorului.Pe baza rutelor accesate paginile corespunzatoare vor fi incarcate in pagina pricipala, iar ele la randul lor is vor face requesturile necesare pentru obtinerea de date.
+            <p property="schema:description">Avem pagina principala, ce va primi datele ce trebuie afisate in cadrul ei.Ea
+                este compusa din navbar, content si footer. Content este partea paginii ce variaza in functie de navigarile
+                utilizatorului.Pe baza rutelor accesate paginile corespunzatoare vor fi incarcate in pagina pricipala, iar
+                ele la randul lor is vor face requesturile necesare pentru obtinerea de date.
             </p>
 
-            Aplicatia poate fi impartita in 2 module: Primul este la nivel de interactiune al utilizatorului, iar al doilea la nivel de functionalitate.
+            <p>Aplicatia poate fi impartita in 2 module: Primul este la nivel de interactiune al utilizatorului, iar al doilea
+                la nivel de functionalitate.</p>
             <img src="C:\Users\Bandro\Documents\GitHub\e4k\Application arhitecture\modules.jpeg" height="500" width="700">
             <li style="font-size:large;">
                 Ofera urmatoarele pagini:
@@ -61,8 +66,9 @@
                     <li style="font-size:large;">Profilul proprietarului -> contine informatiile unui proprietar</li>
                     <li style="font-size:large;">Topul celor mai noi pisici </li>
                     <li style="font-size:large;">Topul celor mai buni proprietari, bazat pe numarul de pisici detinute.</li>
-                    <li style="font-size:large;">Home page -> contine  scurta descriere si functionalitatea de a generea rapoarte</li>
-                    <li style="font-size:large;">Pagina de generare rapoarte -> contine un formular pe baza caruia vor fi generate rapoartele</li>
+                    <li style="font-size:large;">Home page -> contine scurta descriere si functionalitatea de a generea rapoarte</li>
+                    <li style="font-size:large;">Pagina de generare rapoarte -> contine un formular pe baza caruia vor fi
+                        generate rapoartele</li>
                 </ul>
             </li>
         </ul>
@@ -73,16 +79,16 @@
         <h2>Tools and technologies</h2>
         <ul>
             <li style="font-size:large;">
-                 Visual Studio Code
+                Visual Studio Code
             </li>
             <li style="font-size:large;">
                 Codul este testat si utilizat in Google Chrome
             </li>
             <li style="font-size:large;">
-                 GitHub
+                GitHub
             </li>
             <li style="font-size:large;">
-                 Trello
+                Trello
             </li>
             <li style="font-size:large;">
                 Technologii folosite: HTML5, CSS, JavaScript
@@ -95,101 +101,188 @@
 
     <section id="intermediate-steps">
         <h2>Etapele intermediare ale dezvoltării proiectului</h2>
-        <p style="font-size:large;" property="schema:description">O etapa a implicat investigarea arhitecturii unei SPA, a modalitatilor de stocare a datelor  la nivel de client si a modalitatilor de manipulare a datelor.</p>
+        <p style="font-size:large;" property="schema:description">O etapa a implicat investigarea structurii SPA, a modalitatilor
+            de stocare a datelor la nivel de client si a modalitatilor de manipulare a datelor.</p>
     </section>
 
 
     <section id="data-modeling">
         <h2>Modelarea de date</h2>
-        1.Date proprii
-       <p property="schema:description">Aplicatia nu are o baza de date in care sa fie stocate datele deoarece informatiile sunt preluate direct de la sursa prin API-uri publice puse la dispozitie.</p>
-       2.Date externe
-       <p property="schema:description">Pentru a folosi informatiile primite prin requesturi api, ele vor fi transformate in obiecte de tip javascript.Fisierele json sunt preluate si mapate la obiecte javascript.</p>
+        <p style="font-weight:600;">1.Date proprii</p>
+        <p property="schema:description">Aplicatia nu are o baza de date in care sa fie stocate datele deoarece informatiile
+            sunt preluate direct de la sursa prin API-uri publice puse la dispozitie.</p>
+        <p style="font-weight:600;">1.Date externe</p>
+        <p property="schema:description">Pentru a folosi informatiile primite prin requesturi api, ele vor fi transformate
+            in obiecte de tip javascript.Fisierele json sunt preluate si mapate la obiecte javascript.</p>
     </section>
 
     <section id="storage">
         <h2>Soluţiile de stocare disponibile la nivel de client</h2>
-        <p property="schema:description" >Toate pisicile/proprietarii pisicilor care au fost cautate/cautati in trecut sunt salvate intr-un array. Inainte ca un request api sa fie facut, listele sunt verificate in functie de id-ul pisicii/proprietarului, iar daca ele exista deja in listele respective, requestul nu va mai avea loc.</p>
+        <p property="schema:description">Elementele(pisica/proprietar) accesate in trecut sunt
+            salvate in liste. Inainte ca un request api sa fie facut, listele sunt verificate in functie de id-ul elementului,
+            iar daca exista deja in listele respective, requestul nu va mai avea loc.</p>
     </section>
 
     <section id="use-cases">
         <h2>Scenarii de utilizare</h2>
-        <h4>1Generate svg/png</h4>
-        <ul>
+        <h4>1.Generate svg/png</h4>
+        <ul property="schema:description">
             <li>Utilizatorul acceseaza home page</li>
-            <li>Ultilizatorul da click pe butonul "Generate svg/png", iar apoi este redirectionat catre pagina ce contine un formular ce trebuie completat pentru a putea genera repoartele dorite </li>
-            <li>Utilizatorul completeaza formularul pana cand toate campurile formularului vor fi valide, daca nu sunt, utilizatorul nu va avea acces la butonul ce genereaza raportul</li>
-            <li>Dupa ce formularul este completat cu date valide, butonul de sub formular este apasat"Generate", iar un raport va fi downloadat in calculatorul utilizatorului.</li>
+            <li>Ultilizatorul da click pe butonul "Generate svg/png", iar apoi este redirectionat catre pagina ce contine
+                un formular ce trebuie completat pentru a putea genera repoartele dorite </li>
+            <li>Utilizatorul completeaza formularul pana cand toate campurile formularului vor fi valide, daca nu sunt, utilizatorul
+                nu va avea acces la butonul ce genereaza raportul</li>
+            <li>Dupa ce formularul este completat cu date valide, butonul de sub formular este apasat"Generate", iar un raport
+                va fi downloadat in calculatorul utilizatorului.</li>
         </ul>
 
-        <img src="C:\Users\Bandro\Documents\GitHub\e4k\Application arhitecture\UML diagrams\Generate svg-png.jpeg" height="600" width="800">
+        <img src="../Application arhitecture/UML diagrams/Generate svg-png.jpeg" height="600" width="800">
 
         <h4>2.Display the top owners</h4>
-        <ul>
+        <ul property="schema:description">
             <li>Utilizatorul acceseaza home page;</li>
-            <li>Utilizatorul acceseaza bara de meniu care se extine si contine 2 pagini pe care le poate accesa: top users and the newest kitties. </li>
+            <li>Utilizatorul acceseaza bara de meniu care se extine si contine 2 pagini pe care le poate accesa: top users
+                and the newest kitties. </li>
             <li>Pagina "top users" este aleasa din meniu, iar un request api este facut pentru a aduce proprietarii pisicilor.</li>
-            <li>Daca nu apar erori, sunt afisati primii 10 proprietari ce detin cele mai multe pisici, daca apar, utilizatorul este redirectat catre pagina "404 not found".</li>
+            <li>Daca nu apar erori, sunt afisati primii 10 proprietari ce detin cele mai multe pisici, daca apar, utilizatorul
+                este redirectat catre pagina "404 not found".</li>
         </ul>
 
-        <img src="C:\Users\Bandro\Documents\GitHub\e4k\Application arhitecture\UML diagrams\top-owners.jpeg" height="600" width="800">
+        <img src="../Application arhitecture/UML diagrams/top-owners.jpeg" height="600" width="800">
 
         <h4>3.Display the newest kitties</h4>
-        <ul>
+        <ul property="schema:description">
             <li>Utilizatorul acceseaza home page;</li>
-            <li>Utilizatorul acceseaza bara de meniu care se extine si contine 2 pagini pe care le poate accesa: top users and the newest kitties. </li>
+            <li>Utilizatorul acceseaza bara de meniu care se extine si contine 2 pagini pe care le poate accesa: top users
+                and the newest kitties. </li>
             <li>Pagina "newest kitties" este aleasa din meniu, iar un request api este facut pentru a aduce pisicile.</li>
-            <li>Daca nu apar erori, sunt afisate ultimele pisici aparute, altfel, utilizatorul este redirectat catre pagina "404 not found".</li>
+            <li>Daca nu apar erori, sunt afisate ultimele pisici aparute, altfel, utilizatorul este redirectat catre pagina
+                "404 not found".</li>
         </ul>
 
-        <img src="C:\Users\Bandro\Documents\GitHub\e4k\Application arhitecture\UML diagrams\newest-kitties.jpeg" height="600" width="800">
+        <img src="../Application arhitecture/UML diagrams/newest-kitties.jpeg" height="600" width="800">
 
         <h4>4.Display the kitty profile</h4>
-        <ul>
+        <ul property="schema:description">
             <li>Utilizatorul acceseaza home page;</li>
-            <li>Utilizatorul acceseaza bara de meniu care se extine si contine 2 pagini pe care le poate accesa: top users and the newest kitties. </li>
+            <li>Utilizatorul acceseaza bara de meniu care se extine si contine 2 pagini pe care le poate accesa: top users
+                and the newest kitties. </li>
             <li>Pagina "newest kitties" este aleasa din meniu, iar un request api este facut pentru a aduce pisicile.</li>
-            <li>Daca nu apar erori, sunt afisate ultimele pisici aparute, altfel, utilizatorul este redirectat catre pagina "404 not found".</li>
-            <li>Dupa ce sunt afisate ultimele pisici aparute utilizatorul acceseaza cardul unei pisici din cele afisate.Se verifica in lista ce contine istoricul pisicilor daca pisica respectiva a mai fost acceseata de utilizator in trecut,daca raspunsul este negativ se face un api request cu id-ul respectiv pisicii, si este adaugata in lista.Daca este pozitiv, informatiile sunt afisate direct din lista respectiva.</li>
-            <li>Daca este nevoie de un request api, daca nu au fost intampinate erori, sunt afisate informatiile pisici, altfel, utilizatorul este redirectat catre pagina "404 not found". </li>
+            <li>Daca nu apar erori, sunt afisate ultimele pisici aparute, altfel, utilizatorul este redirectat catre pagina
+                "404 not found".</li>
+            <li>Dupa ce sunt afisate ultimele pisici aparute utilizatorul acceseaza cardul unei pisici din cele afisate.Se
+                verifica in lista ce contine istoricul pisicilor daca pisica respectiva a mai fost acceseata de utilizator
+                in trecut,daca raspunsul este negativ se face un api request cu id-ul respectiv pisicii, si este adaugata
+                in lista.Daca este pozitiv, informatiile sunt afisate direct din lista respectiva.</li>
+            <li>Daca este nevoie de un request api, daca nu au fost intampinate erori, sunt afisate informatiile pisici,
+                altfel, utilizatorul este redirectat catre pagina "404 not found". </li>
         </ul>
 
-        Profilul pisicii poate fi accesat si din top owners -> select owner -> select kitty of the owner;pe aceleasi principii descrise mai sus.
+        Profilul pisicii poate fi accesat si din top owners -> select owner -> select kitty of the owner;pe aceleasi principii descrise
+        mai sus.
 
-        <img src="C:\Users\Bandro\Documents\GitHub\e4k\Application arhitecture\UML diagrams\kitty-profile.jpeg" height="600" width="800">
+        <img src="../Application arhitecture/UML diagrams/kitty-profile.jpeg" height="600" width="800">
 
         <h4>5.Display the owner profile</h4>
-        <ul>
+        <ul property="schema:description">
             <li>Utilizatorul acceseaza home page;</li>
-            <li>Utilizatorul acceseaza bara de meniu care se extine si contine 2 pagini pe care le poate accesa: top users and the newest kitties. </li>
+            <li>Utilizatorul acceseaza bara de meniu care se extine si contine 2 pagini pe care le poate accesa: top users
+                and the newest kitties. </li>
             <li>Pagina "top users" este aleasa din meniu, iar un request api este facut pentru a aduce proprietarii pisicilor.</li>
-            <li>Daca nu apar erori, sunt afisati primii 10 proprietari ce detin cele mai multe pisici, daca apar, utilizatorul este redirectat catre pagina "404 not found".</li>
-            <li>Dupa ce sunt afisati cei mai buni proprietari utilizatorul acceseaza cardul unui proprietar din cei afisati.Se verifica in lista ce contine istoricul proprietarilor daca proprietarul respectiv a mai fost accesat de utilizator in trecut,daca raspunsul este negativ se face un api request cu id-ul respectivului proprietar, si este adaugat in lista.Daca este pozitiv, informatiile sunt afisate direct din lista respectiva.</li>
-            <li>Daca este nevoie de un request api, daca nu au fost intampinate erori, sunt afisate informatiile proprietarului, altfel, utilizatorul este redirectat catre pagina "404 not found". </li>
+            <li>Daca nu apar erori, sunt afisati primii 10 proprietari ce detin cele mai multe pisici, daca apar, utilizatorul
+                este redirectat catre pagina "404 not found".</li>
+            <li>Dupa ce sunt afisati cei mai buni proprietari utilizatorul acceseaza cardul unui proprietar din cei afisati.Se
+                verifica in lista ce contine istoricul proprietarilor daca proprietarul respectiv a mai fost accesat de utilizator
+                in trecut,daca raspunsul este negativ se face un api request cu id-ul respectivului proprietar, si este adaugat
+                in lista.Daca este pozitiv, informatiile sunt afisate direct din lista respectiva.</li>
+            <li>Daca este nevoie de un request api, daca nu au fost intampinate erori, sunt afisate informatiile proprietarului,
+                altfel, utilizatorul este redirectat catre pagina "404 not found". </li>
         </ul>
 
-        Profilul proprietarului poate fi accesat si din the newest kitties -> select kitty -> select owner; pe aceleasi principii descrise mai sus.
+        Profilul proprietarului poate fi accesat si din the newest kitties -> select kitty -> select owner; pe aceleasi principii
+        descrise mai sus.
 
-        <img src="C:\Users\Bandro\Documents\GitHub\e4k\Application arhitecture\UML diagrams\owner-profile.jpeg" height="600" width="800">
+        <img src="../Application arhitecture/UML diagrams/owner-profile.jpeg" height="600" width="800">
 
         <h4>6.Display the family tree</h4>
-        <ul>
-                <li>Utilizatorul acceseaza home page;</li>
-                <li>Utilizatorul acceseaza bara de meniu care se extine si contine 2 pagini pe care le poate accesa: top users and the newest kitties. </li>
-                <li>Pagina "newest kitties" este aleasa din meniu, iar un request api este facut pentru a aduce pisicile.</li>
-                <li>Daca nu apar erori, sunt afisate ultimele pisici aparute, altfel, utilizatorul este redirectat catre pagina "404 not found".</li>
-                <li>Dupa ce sunt afisate ultimele pisici aparute utilizatorul acceseaza cardul unei pisici din cele afisate.Se verifica in lista ce contine istoricul pisicilor daca pisica respectiva a mai fost acceseata de utilizator in trecut,daca raspunsul este negativ se face un api request cu id-ul respectiv pisicii, si este adaugata in lista.Daca este pozitiv, informatiile sunt afisate direct din lista respectiva.</li>
-                <li>Daca este nevoie de un request api, daca nu au fost intampinate erori, sunt afisate informatiile pisici, altfel, utilizatorul este redirectat catre pagina "404 not found". </li>
-                <li>Pe profilul pisicii accesam butonul "see family tree".Se efectueaza un apel recursiv pana cand nu se mai gasesc parinti pentru o anumita pisica.</li>
-                <li>Daca nu apar erori, arborele este afisat, altfel, utilizatorul este redirectat catre pagina "404 not found".</li>
-            </ul>
-    
-            Profilul pisicii poate fi accesat si din top owners -> select owner -> select kitty of the owner;pe aceleasi principii descrise mai sus.
+        <ul property="schema:description">
+            <li>Utilizatorul acceseaza home page;</li>
+            <li>Utilizatorul acceseaza bara de meniu care se extine si contine 2 pagini pe care le poate accesa: top users
+                and the newest kitties. </li>
+            <li>Pagina "newest kitties" este aleasa din meniu, iar un request api este facut pentru a aduce pisicile.</li>
+            <li>Daca nu apar erori, sunt afisate ultimele pisici aparute, altfel, utilizatorul este redirectat catre pagina
+                "404 not found".</li>
+            <li>Dupa ce sunt afisate ultimele pisici aparute utilizatorul acceseaza cardul unei pisici din cele afisate.Se
+                verifica in lista ce contine istoricul pisicilor daca pisica respectiva a mai fost acceseata de utilizator
+                in trecut,daca raspunsul este negativ se face un api request cu id-ul respectiv pisicii, si este adaugata
+                in lista.Daca este pozitiv, informatiile sunt afisate direct din lista respectiva.</li>
+            <li>Daca este nevoie de un request api, daca nu au fost intampinate erori, sunt afisate informatiile pisici,
+                altfel, utilizatorul este redirectat catre pagina "404 not found". </li>
+            <li>Pe profilul pisicii accesam butonul "see family tree".Se efectueaza un apel recursiv pana cand nu se mai
+                gasesc parinti pentru o anumita pisica.</li>
+            <li>Daca nu apar erori, arborele este afisat, altfel, utilizatorul este redirectat catre pagina "404 not found".</li>
+        </ul>
 
-        <img src="C:\Users\Bandro\Documents\GitHub\e4k\Application arhitecture\UML diagrams\family-tree.jpeg" height="600" width="800">
+        Profilul pisicii poate fi accesat si din top owners -> select owner -> select kitty of the owner;pe aceleasi principii descrise
+        mai sus.
+
+        <img src="../Application arhitecture/UML diagrams/family-tree.jpeg" height="600" width="800">
+
+        <h4>7.Display the kitty child profile</h4>
+        <ul property="schema:description">
+            <li>Utilizatorul acceseaza home page;</li>
+            <li>Utilizatorul acceseaza bara de meniu care se extine si contine 2 pagini pe care le poate accesa: top users
+                and the newest kitties. </li>
+            <li>Pagina "newest kitties" este aleasa din meniu, iar un request api este facut pentru a aduce pisicile.</li>
+            <li>Daca nu apar erori, sunt afisate ultimele pisici aparute, altfel, utilizatorul este redirectat catre pagina
+                "404 not found".</li>
+            <li>Dupa ce sunt afisate ultimele pisici aparute utilizatorul acceseaza cardul unei pisici din cele afisate.Se
+                verifica in lista ce contine istoricul pisicilor daca pisica respectiva a mai fost acceseata de utilizator
+                in trecut,daca raspunsul este negativ se face un api request cu id-ul respectiv pisicii, si este adaugata
+                in lista.Daca este pozitiv, informatiile sunt afisate direct din lista respectiva.</li>
+            <li>Daca este nevoie de un request api, daca nu au fost intampinate erori, sunt afisate informatiile pisici,
+                altfel, utilizatorul este redirectat catre pagina "404 not found". </li>
+            <li>Este selectat un pui al pisicii.Se verifica in lista ce contine istoricul pisicilor daca pisica respectiva
+                a mai fost acceseata de utilizator in trecut,daca raspunsul este negativ se face un api request cu id-ul
+                respectiv pisicii, si este adaugata in lista.Daca este pozitiv, informatiile sunt afisate direct din lista
+                respectiva.
+            </li>
+            <li>Daca este nevoie de un request api, daca nu au fost intampinate erori, sunt afisate informatiile pisici,
+                altfel, utilizatorul este redirectat catre pagina "404 not found". </li>
+        </ul>
+
+        Profilul pisicii poate fi accesat si din top owners -> select owner -> select kitty of the owner;pe aceleasi principii descrise
+        mai sus.
+
+        <img src="../Application arhitecture/UML diagrams/kitty-child.jpeg" height="600" width="800">
+
+        <h4>7.Display the kitty parent profile</h4>
+        <ul property="schema:description">
+            <li>Utilizatorul acceseaza home page;</li>
+            <li>Utilizatorul acceseaza bara de meniu care se extine si contine 2 pagini pe care le poate accesa: top users
+                and the newest kitties. </li>
+            <li>Pagina "newest kitties" este aleasa din meniu, iar un request api este facut pentru a aduce pisicile.</li>
+            <li>Daca nu apar erori, sunt afisate ultimele pisici aparute, altfel, utilizatorul este redirectat catre pagina
+                "404 not found".</li>
+            <li>Dupa ce sunt afisate ultimele pisici aparute utilizatorul acceseaza cardul unei pisici din cele afisate.Se
+                verifica in lista ce contine istoricul pisicilor daca pisica respectiva a mai fost acceseata de utilizator
+                in trecut,daca raspunsul este negativ se face un api request cu id-ul respectiv pisicii, si este adaugata
+                in lista.Daca este pozitiv, informatiile sunt afisate direct din lista respectiva.</li>
+            <li>Daca este nevoie de un request api, daca nu au fost intampinate erori, sunt afisate informatiile pisici,
+                altfel, utilizatorul este redirectat catre pagina "404 not found". </li>
+            <li>Este selectat un parinte al pisicii.Se verifica in lista ce contine istoricul pisicilor daca pisica respectiva
+                a mai fost acceseata de utilizator in trecut,daca raspunsul este negativ se face un api request cu id-ul
+                respectiv pisicii, si este adaugata in lista.Daca este pozitiv, informatiile sunt afisate direct din lista
+                respectiva.
+            </li>
+            <li>Daca este nevoie de un request api, daca nu au fost intampinate erori, sunt afisate informatiile pisici,
+                altfel, utilizatorul este redirectat catre pagina "404 not found". </li>
+        </ul>
+
+        Profilul pisicii poate fi accesat si din top owners -> select owner -> select kitty of the owner;pe aceleasi principii descrise
+        mai sus.
+
+        <img src="../Application arhitecture/UML diagrams/parent-profile.jpeg" height="600" width="800">
     </section>
- 
-
 </body>
-
 </html>
