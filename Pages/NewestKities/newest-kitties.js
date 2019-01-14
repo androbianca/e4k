@@ -8,7 +8,6 @@ function httpGet() {
         if(xmlHttp.readyState === 4 && xmlHttp.status === 200) {
             var response = JSON.parse(xmlHttp.responseText)
             displayKitties(response.kitties);
-            localStorage.key = response.kitties.id;
           }
     }
     

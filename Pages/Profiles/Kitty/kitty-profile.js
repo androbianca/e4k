@@ -9,10 +9,7 @@ function httpGet() {
     xmlHttp.onreadystatechange = function () {
         if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
             var response = JSON.parse(xmlHttp.responseText)
-            console.log(response);
-            displayCattributes(response.enhanced_cattributes);
             displayInfo(response);
-            displayChildren(response.children);
         }
 
     }
@@ -25,7 +22,12 @@ function getId(){
 }
 
 function displayInfo(response) {
+   
+    displayCattributes(response.enhanced_cattributes);     
+    displayChildren(response.children);
     url = 'https://www.cryptokitties.co/profile/profile-' + response.owner.image + '.png';
+    matron_url = '../Profiles/Kitty/kitty-profile.html?id=' + response.matron.id;
+    sire_url = '../Profiles/Kitty/kitty-profile.html?id=' + response.sire.id;
 
     document.getElementById("profile-img").src = response.image_url_png;
     document.getElementById("name").innerHTML = response.name;
@@ -33,16 +35,16 @@ function displayInfo(response) {
     document.getElementById("owner").innerHTML = response.owner.nickname;
     document.getElementById('owner-img').src = url;
 
-    console.log(!response.matron || !response.sire );
     if (!response.matron || !response.sire) {
         document.getElementById("list").innerHTML = 'No parents found';
-        console.log(response.matron );
-      
-
+ 
     } else {
         document.getElementById("matron").src = response.matron.image_url_png;
-        document.getElementById("sire").src = response.sire.image_url_png;
-       
+        var templateHtml = document.getElementById("matron").innerHTML;
+        templateHtml.replace(/{{href}}/g, matron_url);
+    
+        
+        document.getElementById("sire").src = response.sire.image_url_png;      
     }
 }
 
@@ -57,13 +59,11 @@ function displayCattributes(cattributes) {
 
 
 function displayChildren(children) {
-
     if (generateChildren(children)) {
         document.getElementById("displayChildren").innerHTML = generateChildren(children);
         return;
     }
     document.getElementById("displayChildren").innerHTML = "No children"
-
 }
 
 
@@ -91,8 +91,6 @@ function generateCattributes(cattributes) {
     for (cattribute in cattributes) {
         listHtml += templateHtml.replace(/{{type}}/g, cattributes[cattribute]["type"])
             .replace(/{{description}}/g, cattributes[cattribute]["description"])
-
-
     }
 
     return listHtml;
