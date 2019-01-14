@@ -1,6 +1,6 @@
 .kitty-profile-img{
     height: 300px;
-    width: 300px;
+    width: 350px;
     background-color:pink;  
     border-radius: 20px; 
 }
@@ -79,11 +79,22 @@
 }
 
 .empty-img{
-    height: 50px;
-    width: 50px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:50px;
+    height:50px;
     border-radius: 50%;
-    border:0.5px solid rgb(168, 167, 167);
-    background: rgb(228, 225, 225);  
+    background-color: #efe8fa;
+    border: 0.5px solid blue;
+    
+}
+
+.cattribut-diamont{
+    width:25px;
+    height:25px;
+    background-image: url(https://www.cryptokitties.co/images/cattributes/silver.svg);
+
 }
 
 .cattribut-card{
@@ -111,32 +122,6 @@
 .cattributes-list{
     width:100%;
     margin-bottom: 30px;
-}
-
-.mewtations-diamond{
-    margin-left :5px;
-    width:40px;
-    height:40px;
-    background-image: url(https://www.cryptokitties.co/images/cattributes/bronze-lg.svg);
-}
-
-.mewtations-card{
-    height: 60px;
-    width: 150px;
-    padding:3px;
-    margin-right: 10px;
-    background-color: #e9f4ff;
-    border-radius:3.3rem;
-    border: 1px solid blue;
-}
-
-.mewtations-card .cattribut-info{
-    font-size:11px;   
-    margin-left:2px;
-}
-
-.mewtations-card .cattribut-name{
-    font-size:13px;
 }
 
 .kitty-list{
