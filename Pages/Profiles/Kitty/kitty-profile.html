@@ -52,15 +52,16 @@
 
     <div class="kitty-profile-wrapper">
         <div class="kitty-info">
-            <img class="kitty-profile-img" id="profile-img" src="img" alt="">
+            <img class="kitty-profile-img" id="kitty-profile" src="img" alt="">
             <div class="info-container">
+               
                 <div class="name_plus_owner">
-                    <h2 id="name"></h2>
-                    <a href="../User/user-profile.html">
+                    <h2 id="kitty-name"></h2>
+                    <a id="owner-href" href="href">
                         <div class="owner-container">
-                            <img class="owner-img" id="owner-img" src="ceva" alt="">
+                            <img class="owner-img" id="owner-profile" src="img" alt="">
                             <div class="owner-txt">
-                                <div class="owner-name" id="owner"></div>
+                                <div class="owner-name" id="owner-name"></div>
                                 <p>Owner</p>
                             </div>
                         </div>
@@ -74,12 +75,12 @@
 
                 <div class="price-container">
                     <img class="price-img" src="../../Images/coins-icon.png" alt="">
-                    <p>Price <small>Ξ</small> 0.3046 $</p>
+                    <p>Price <small>Ξ</small> <p id="price"></p> </p>
                 </div>
 
                 <h3>Bio</h3>
                 <div class="bio-container">
-                    <p id="bio"></p>
+                    <p id="description"></p>
                 </div>
 
                 <h3>Cattributes</h3>
@@ -89,16 +90,8 @@
                 <div class="kitty-list" id="displayChildren"> </div>
 
                 <h3>Parents</h3>
-                <div class="kitty-list" id="list">
-                    <div class="kitty-card">
-                        <a href="{{href}}">
-                        <img class="kitty-img" id="matron" src="" alt="">
-                    </a>
-                    </div>
-                    <div class="kitty-card">
-                        <img class="kitty-img" id="sire" src="ceva" alt="">
-                    </div>
-                </div>
+                <div class="kitty-list" id="displayparents"></div>
+              
             </div>
         </div>
     </div>
@@ -155,14 +148,13 @@
     <script src="../Kitty/kitty-profile.js"></script>
 
 </body>
-
 </html>
 
-<script id="template-list-item" type="text/template">
+
+<script id="cattributes-template" type="text/template">
     <div class="cattribut-card">
-            <div class=" empty-img ">
-                <div class="cattribut-diamont"></div>
-              
+            <div class="empty-img">
+                <div class="cattribut-diamont"></div>         
             </div>
             <div class="cattribut-info">
                 <span class="cattribut-name">{{type}}</span>
@@ -171,11 +163,11 @@
         </div>
 </script>
 
-<script id="children-list" type="text/template">
-    <a href="{{href}}">
+<script id="family-template" type="text/template">
+    <a href="{{href}}" >
         <div class="kitty-card">
-            <img class="kitty-img" src="{{href}}" alt="">
+            <img class="kitty-img" src="{{src}}" alt="">
         </div>
     </a>
-
 </script>
+
