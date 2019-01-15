@@ -28,6 +28,7 @@ function httpGet() {
                 owner_img: 'https://www.cryptokitties.co/profile/profile-' + response.owner.image + '.png',
                 owner_address: response.owner.address,
             }
+            console.log(response);
             displayInfo(kitty);
         }
     }
@@ -47,7 +48,7 @@ function displayInfo(kitty) {
     if (kitty.profile_img) {
         document.getElementById("kitty-profile").src = kitty.profile_img;
     } else
-        document.getElementById("kitty-profile").src = '../../unknown.png';
+        document.getElementById("kitty-profile").src = '../../Images/unknown.png';
         
     document.getElementById("kitty-name").innerHTML = kitty.name;
     document.getElementById('owner-profile').src = kitty.owner_img;

@@ -1,8 +1,13 @@
 .kitty-profile-img{
     height: 300px;
-    width: 350px;
+    width: 300px;
     background-color:pink;  
     border-radius: 20px; 
+}
+
+.kitty-profile-img img {
+    height: 200px;
+   
 }
 
 .price-img{

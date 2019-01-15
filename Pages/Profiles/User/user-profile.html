@@ -33,11 +33,6 @@
                     </a>
                 </li>
                 <li>
-                    <a href="./user-profile.html">
-                        My Profile
-                    </a>  
-                </li>
-                <li>
                     <a href="../../NewestKities/newest-kitties.html">
                         New Kitties
                     </a>             
@@ -54,67 +49,20 @@
     <div class="user">
         <div class="container">
             <div class="main-info">
-                <img src="../../Images/user-profile-photo.png" alt="">
+                <img id="owner-img" src="src" alt="">
 
-                <h2 class="user-name">
-                    User Name
+                <h2 class="user-name" id="name">
+                   
                 </h2>
 
-                <h4 class="user-kitties">
-                    1.234 kitties
+                <h4 id="total" class="user-kitties">
+                        
+                   
                 </h4>
             </div>
-            <div class="kitties">
-                <a href="../Kitty/kitty-profile.html">
-                    <div class="kitty">
-                        <img src="../../Images/kitty.png" alt="">
-                        <h4>Kitty name</h4>
-                    </div>
-                </a>
-                <div class="kitty">
-                    <img src="../../Images/kitty.png" alt="">
-                    <h4>Kitty name</h4>
-                </div>
-                <div class="kitty">
-                    <img src="../../Images/kitty.png" alt="">
-                    <h4>Kitty name</h4>
-                </div>
-                <div class="kitty">
-                    <img src="../../Images/kitty.png" alt="">
-                    <h4>Kitty name</h4>
-                </div>
-                <div class="kitty">
-                    <img src="../../Images/kitty.png" alt="">
-                    <h4>Kitty name</h4>
-                </div>
-                <div class="kitty">
-                    <img src="../../Images/kitty.png" alt="">
-                    <h4>Kitty name</h4>
-                </div>
-                <div class="kitty">
-                    <img src="../../Images/kitty.png" alt="">
-                    <h4>Kitty name</h4>
-                </div>
-                <div class="kitty">
-                    <img src="../../Images/kitty.png" alt="">
-                    <h4>Kitty name</h4>
-                </div>
-                <div class="kitty">
-                    <img src="../../Images/kitty.png" alt="">
-                    <h4>Kitty name</h4>
-                </div>
-                <div class="kitty"> 
-                    <img src="../../Images/kitty.png" alt="">
-                    <h4>Kitty name</h4>
-                </div>
-                <div class="kitty">
-                    <img src="../../Images/kitty.png" alt="" >
-                    <h4>Kitty name</h4>
-                </div>
-                <div class="kitty">
-                    <img src="../../Images/kitty.png" alt="">
-                    <h4>Kitty name</h4>
-                </div>
+            <div class="kitties" id="kitty">
+            
+           
             </div>
         </div>
     </div>
@@ -175,3 +123,12 @@
 
 
 </html>
+
+<script id="list" type="text/template">
+    <a href="{{href}}">
+                    <div class="kitty">
+                        <img src="{{src}}" alt="">
+                        <h4>{{name}}</h4>
+                    </div>
+                </a>
+</script>
