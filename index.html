@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="../Navbar/navbar.css">
-    <link rel="stylesheet" type="text/css" href="../Footer/footer.css">
-
-    <link rel="stylesheet" type="text/css" href="../NewestKities/newest-kitties.css">
-    <title>Newest Kitties</title>
+    <link rel="stylesheet" type="text/css" href="/Style/navbar.css">
+    <link rel="stylesheet" type="text/css" href="/Style/footer.css">
+    <title>Document</title>
 </head>
 
 <body>
@@ -18,6 +15,7 @@
             <div class="logo-icon"></div>
             <p>Eye for Kitties</p>
         </div>
+
         <div class="menu">
             <div class="navigation-icon" onclick="toggleMenu()"></div>
         </div>
@@ -26,32 +24,24 @@
     <div class="navigation hidden">
         <ul>
             <li>
-                <a href="../Homepage/homepage.html">
+                <a href="#home">
                     Home
                 </a>
             </li>
             <li>
-                <a href="../NewestKities/newest-kitties.html">
+                <a href="#newest-kitties">
                     New Kitties
                 </a>
             </li>
             <li>
-                <a href="../TopOwners/top-owners.html">
+                <a href="#top-owners">
                     Top Users
                 </a>
             </li>
 
         </ul>
     </div>
-
-    <p id="kitty-name"></p>
-    <div class="main-container">
-        <h1 class="title-txt">New Arrivals</h1>
-        <div class="wrapper">
-            <div class="grid" id="displayKitties"></div>
-        </div>
-    </div>
-
+    <div id="app"></div>
     <footer>
         <div class="grid-item"></div>
         <div class="grid-item">
@@ -97,25 +87,14 @@
             </div>
         </div>
         <div>
-            <img class="paw" src="../Images/paw.png" alt="paw">
+            <img class="paw" src="/Images/paw.png" alt="paw">
         </div>
     </footer>
-
-
-    <script src="../Navbar/navbar.js"></script>
-    <script src="../NewestKities/newest-kitties.js"></script>
-
-
-    <script id="template-list-item" type="text/template">
-            <div class="content-box">
-                <p class="content-box__txt">{{name}}</p>
-                <a href="../Profiles/Kitty/kitty-profile.html?id={{kitty-id}}">
-                    <img class="content-box__img" src="{{href}}" alt="kitty">
-                </a>
-                <div class="content__owner-photo">               
-                </div>      
-            </div>
-</script>
 </body>
 
 </html>
+<script src="/javaScript/newest-kitties.js"></script>
+<script src="/javaScript/navbar.js"></script>
+<script src="/javaScript/route.js"></script>
+<script src="/javaScript/router.js"></script>
+<script src="/javaScript/app.js"></script>

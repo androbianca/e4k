@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="/Style/newest-kitties.css">
+    <title>Newest Kitties</title>
+</head>
+
+<body>
+    <p id="kitty-name"></p>
+    <div class="main-container">
+        <h1 class="title-txt">New Arrivals</h1>
+        <div class="wrapper">
+            <div class="grid" id="displayKitties"></div>
+        </div>
+    </div>
+
+    <script src="/javaScript/newest-kitties.js"></script>
+
+
+    <script id="template-list-item" type="text/template">
+            <div class="content-box">
+                <p class="content-box__txt">{{name}}</p>
+                <a href="#kitty-profile?id={{kitty-id}}">
+                    <img class="content-box__img" src="{{href}}" alt="kitty">
+                </a>
+                <div class="content__owner-photo">               
+                </div>      
+            </div>
+</script>
+</body>
+
+</html>
