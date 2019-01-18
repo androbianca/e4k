@@ -15,7 +15,9 @@ function httpGet() {
     xmlHttp.onreadystatechange = function () {
         if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
             var response = JSON.parse(xmlHttp.responseText);
+            
             var kitty = {
+                id: response.id,
                 price: response.auction.current_price,
                 name: response.name,
                 profile_img: response.image_url_png,
@@ -40,6 +42,7 @@ function displayInfo(kitty) {
 
     var parents = setParents(kitty);
     var url = '#user-profile/' + kitty.owner_address;
+    var family_tree_url = '#family-tree/' + kitty.id;
 
     display(kitty.cattributes, 'displayCattributes', 'No cattributes', generateCattributes, "cattributes-template");
     display(kitty.children, 'displayChildren', 'No children', generateFamily, 'family-template');
@@ -52,7 +55,9 @@ function displayInfo(kitty) {
         
     document.getElementById("kitty-name").innerHTML = kitty.name;
     document.getElementById('owner-profile').src = kitty.owner_img;
+    
     document.getElementById('owner-href').setAttribute('href', url);
+    document.getElementById('fam-href').setAttribute('href', family_tree_url);
 
 
     setValue(kitty.description, 'description', 'No description');

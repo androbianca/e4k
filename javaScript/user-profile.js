@@ -42,7 +42,7 @@ function displayOwnerInfo(response){
           numberOfKitties = numberOfKitties + 1;
           listHtml += templateHtml.replace(/{{name}}/g, dataObject[key]["name"])
                                   .replace(/{{src}}/g, dataObject[key]["image_url_png"])
-                                  .replace(/{{href}}/g,  '../Kitty/kitty-profile.html?id=' + dataObject[key]["id"])
+                                  .replace(/{{href}}/g,  '#kitty-profile/' + dataObject[key]["id"])
       }
   
       return listHtml;

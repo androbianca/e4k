@@ -5,7 +5,8 @@
             new Route('newest-kitties', 'newest-kitties.html'),
             new Route('top-owners', 'top-owners.html'),
             new Route('user-profile/:adress', 'user-profile.html'),
-            new Route('kitty-profile/:id', 'kitty-profile.html')
+            new Route('kitty-profile/:id', 'kitty-profile.html'),
+            new Route('family-tree/:id', 'family-tree.html')
         ]);
     }
     init();

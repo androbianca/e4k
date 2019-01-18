@@ -58,6 +58,10 @@ Router.prototype = {
                 loadJsURL("/javaScript/user-profile.js");
             }
 
+            if(htmlName=="family-tree.html"){
+                loadJsURL("/javaScript/family-tree.js");
+            }
+
             xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                 if (this.readyState === 4 && this.status === 200) {
