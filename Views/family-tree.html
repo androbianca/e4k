@@ -10,39 +10,29 @@
 </head>
 
 <body>
- <div class="main-container">
+    <div class="main-container">
         <h1 class="title-txt">FamilyTree</h1>
-
-Parents:
-
-
-        <div class="wrapper">
-           
-                    <div class="content-box">
-                        <p class="content-box__txt" id="matron_name"></p>
-                        <a href="../Profiles/Kitty/kitty-profile.html">
-                            <img class="content-box__img" src="../Images/kitty.png" alt="kitty">
-                        </a>
-
-                    </div>
-
-                    <div class="content-box">
-                        <p class="content-box__txt">(GrandParrent B)</p>
-                        <a href="../Profiles/Kitty/kitty-profile.html">
-                            <img class="content-box__img" src="../Images/kitty.png" alt="kitty">
-                        </a>
-
-                    </div>
-                  
-        </div>
-       
-           
-
-        </div>
-        <div class="family-value">
-            Family value: 3.14
-        </div>
+      
+            <div class="grid">
+              
+                    <div id="mydiv1" class="area" ></div>
+                    <div id="mydiv2" class="area" ></div>
+                    <div id="mydiv3" class="area" ></div>
+                    <div id="sib"  ></div>
+            </div>
+     
     </div>
 </body>
 
 </html>
+
+<script type="text/template" id="family">
+     
+        <div title="{{rel}}" class="content-box">
+            <p class="content-box__txt">{{name}}</p>
+            <a href="{{href}}">
+                <img class="content-box__img" src="{{src}}" alt="kitty">
+            </a>                               
+
+</div>
+</script>

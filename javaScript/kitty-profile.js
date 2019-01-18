@@ -15,7 +15,6 @@ function httpGet() {
     xmlHttp.onreadystatechange = function () {
         if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
             var response = JSON.parse(xmlHttp.responseText);
-            
             var kitty = {
                 id: response.id,
                 price: response.auction.current_price,
@@ -25,7 +24,7 @@ function httpGet() {
                 cattributes: response.enhanced_cattributes,
                 children: response.children,
                 matron: response.matron,
-                sire: response.matron,
+                sire: response.sire,
                 owner_name: response.owner.nickname,
                 owner_img: 'https://www.cryptokitties.co/profile/profile-' + response.owner.image + '.png',
                 owner_address: response.owner.address,
@@ -70,12 +69,6 @@ function setParents(kitty) {
 
     if (kitty.matron.id && kitty.sire.id) {
         parents = [kitty.matron, kitty.sire];
-    }
-    if (!kitty.matron.id && kitty.sire.id) {
-        parents = [kitty.sire];
-    }
-    if (kitty.matron.id && !kitty.sire.id) {
-        parents = [kitty.matron];
     }
 
     return parents;

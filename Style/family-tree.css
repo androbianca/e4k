@@ -19,8 +19,7 @@
 .grid {
   display: grid;
   justify-items: center;
-  width: 100%;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr ;
 }
 
 .area {
@@ -66,11 +65,11 @@
   border-radius: 5px;
 }
 
-@media screen and (max-width: 835px) {
+/* @media screen and (max-width: 835px) {
   .title-txt {
     font-size: 20px;
   }
   .area {
     margin-top: 15px;
   }
-}
+} */
