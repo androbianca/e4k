@@ -19,6 +19,15 @@ Route.prototype = {
         this.default = defaultRoute;
     },
     isActiveRoute: function (hashedPath) {
-        return hashedPath.replace('#', '') === this.name; 
+        var currentRoute = hashedPath.replace('#', '');
+        if(currentRoute === this.name){
+            return true;
+        }
+
+        if(currentRoute.split('/')[0] === this.name.split('/')[0]){
+            return true;
+        }
+        return  false;
+        
     }
 }

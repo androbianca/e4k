@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User profile</title>
+
+    <link rel="stylesheet" type="text/css" href="/Style/user-profile.css">
+</head>
+
+<body>
+    <div class="user">
+        <div class="container">
+            <div class="main-info">
+                <img id="owner-img" src="src" alt="">
+                <h2 class="user-name" id="name"></h2>
+                <h4 id="total" class="user-kitties"> </h4>
+            </div>
+            <div class="kitties" id="kitty"></div>
+        </div>
+    </div>
+</body>
+
+
+
+</html>
+
+<script id="list" type="text/template">
+    <a href="{{href}}">
+                    <div class="kitty">
+                        <img src="{{src}}" alt="">
+                        <h4>{{name}}</h4>
+                    </div>
+                </a>
+</script>

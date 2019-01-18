@@ -12,6 +12,8 @@ function httpGet() {
     }
     
     xmlHttp.send();
+   
+ 
 }
 
 
@@ -27,7 +29,7 @@ function generateTemplate(dataObject) {
     for (key in dataObject) {
         listHtml += templateHtml.replace(/{{name}}/g, dataObject[key]["name"])
                                 .replace(/{{href}}/g, dataObject[key]["image_url_png"])
-                                .replace(/{{kitty-id}}/g, dataObject[key]["id"])
+                                .replace(/{{id}}/g, dataObject[key]["id"])           
     }
 
     return listHtml;

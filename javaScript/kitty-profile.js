@@ -1,14 +1,14 @@
 httpGet();
 
 function getId() {
-    var query = window.location.search.substring(1);
-    return query.split('id=')[1];
+    var query = window.location.hash.substring(1);
+    return query.split('/')[1];
 }
 
-var baseUrl = '../Kitty/kitty-profile.html?id=';
+var baseUrl = '#kitty-profile/';
 
 function httpGet() {
-    id = getId();
+    var id = getId();
     const url = 'https://api.cryptokitties.co/kitties/' + id;
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", url);
@@ -28,18 +28,18 @@ function httpGet() {
                 owner_img: 'https://www.cryptokitties.co/profile/profile-' + response.owner.image + '.png',
                 owner_address: response.owner.address,
             }
-            console.log(response);
             displayInfo(kitty);
         }
     }
     xmlHttp.send();
+    
 }
 
 
 function displayInfo(kitty) {
 
     var parents = setParents(kitty);
-    var url = '../User/user-profile.html?id=' + kitty.owner_address;
+    var url = '#user-profile/' + kitty.owner_address;
 
     display(kitty.cattributes, 'displayCattributes', 'No cattributes', generateCattributes, "cattributes-template");
     display(kitty.children, 'displayChildren', 'No children', generateFamily, 'family-template');
@@ -95,9 +95,12 @@ function display(info, id, message, func, templateid) {
 
 function generateFamily(list, element, templateHtml) {
 
-    var url = baseUrl + list[element].id;
-    return templateHtml.replace(/{{src}}/g, list[element]["image_url_png"])
-        .replace(/{{href}}/g, url)
+    var url = baseUrl;
+    return templateHtml
+        .replace(/{{src}}/g, list[element]["image_url_png"])
+        .replace(/{{id}}/g, list[element]["id"])
+    
+       
 }
 
 

@@ -45,8 +45,20 @@ Router.prototype = {
     },
     goToRoute: function (htmlName) {
         (function(scope) { 
-            var url = 'Views/' + htmlName,
-                xhttp = new XMLHttpRequest();
+            var url = 'Views/' + htmlName;
+            if(htmlName=="newest-kitties.html") {
+                loadJsURL("/javaScript/newest-kitties.js");
+            }
+
+            if(htmlName=="kitty-profile.html"){
+                loadJsURL("/javaScript/kitty-profile.js");
+            }
+
+            if(htmlName=="user-profile.html"){
+                loadJsURL("/javaScript/user-profile.js");
+            }
+
+            xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                 if (this.readyState === 4 && this.status === 200) {
                     scope.rootElem.innerHTML = this.responseText;
@@ -54,6 +66,34 @@ Router.prototype = {
             };
             xhttp.open('GET', url, true);
             xhttp.send();
+
+          
         })(this);
     }
 };
+
+var loadJsURL = function(url) {
+
+    var canJsLoad = function(url) {
+        if (!url) return false;
+        var scripts = document.getElementsByTagName('script');
+        for (var i = scripts.length; i--;) {
+            // *td
+            // better with substring or pos, thinking of // start
+            if (scripts[i].src == url) return false;
+        }
+        return true;
+    }
+
+    // Load js url
+    var insertJsUrl = function(url) {
+        var script = document.createElement('script');
+        script.setAttribute('src', url);
+        document.body.appendChild(script);
+    }
+
+    if ( canJsLoad(url) ) {
+        insertJsUrl(url)
+    }
+}
+
