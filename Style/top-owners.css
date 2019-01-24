@@ -157,7 +157,7 @@ li:nth-of-type(2):not(:hover) .user-img {
 }
 
 .card-img {
-    height: 80%;
+    height: 80px;
     border:1px solid rgb(172, 172, 172); 
     border-radius:50%;
 }
@@ -170,6 +170,7 @@ li:nth-of-type(2):not(:hover) .user-img {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    overflow: hidden;
 }
 
 .img{
@@ -177,7 +178,6 @@ li:nth-of-type(2):not(:hover) .user-img {
     width: 30px;
     margin-right:10px;  
     border-radius: 20px;
-   
 }
 
 .kitties-count {
@@ -231,9 +231,5 @@ li:nth-of-type(2):not(:hover) .user-img {
     font-size: 20px;
  }
 
- #page{
-   
-
- }
 }
       
