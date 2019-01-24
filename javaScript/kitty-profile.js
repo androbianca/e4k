@@ -1,11 +1,10 @@
+var baseUrl = '#kitty-profile/';
 httpGet();
 
 function getId() {
     var query = window.location.hash.substring(1);
     return query.split('/')[1];
 }
-
-var baseUrl = '#kitty-profile/';
 
 function httpGet() {
     var id = getId();
@@ -33,9 +32,7 @@ function httpGet() {
         }
     }
     xmlHttp.send();
-    
 }
-
 
 function displayInfo(kitty) {
 
@@ -50,17 +47,21 @@ function displayInfo(kitty) {
     if (kitty.profile_img) {
         document.getElementById("kitty-profile").src = kitty.profile_img;
     } else
-        document.getElementById("kitty-profile").src = '../../Images/unknown.png';
-        
-    document.getElementById("kitty-name").innerHTML = kitty.name;
+        document.getElementById("kitty-profile").src = '../../Images/unk.png';
+
+    if (kitty.name) {
+        document.getElementById("kitty-name").innerHTML = kitty.name;
+    }
+    else {
+        document.getElementById("kitty-name").innerHTML = 'John Doe';
+    }
     document.getElementById('owner-profile').src = kitty.owner_img;
-    
+
     document.getElementById('owner-href').setAttribute('href', url);
     document.getElementById('fam-href').setAttribute('href', family_tree_url);
 
-
     setValue(kitty.description, 'description', 'No description');
-    setValue(kitty.owner_name, 'owner-name', 'Anonimus');
+    setValue(kitty.owner_name, 'owner-name', 'John Doe');
     setValue(kitty.price, 'price', 'None yet');
 }
 
@@ -92,13 +93,12 @@ function display(info, id, message, func, templateid) {
 }
 
 function generateFamily(list, element, templateHtml) {
-
-    var url = baseUrl;
+    if(!list[element]["image_url_png"]){
+        list[element]["image_url_png"]= '../Images/unk.png'
+    }
     return templateHtml
         .replace(/{{src}}/g, list[element]["image_url_png"])
         .replace(/{{id}}/g, list[element]["id"])
-    
-       
 }
 
 
@@ -108,14 +108,12 @@ function generateCattributes(list, element, templateHtml) {
 }
 
 function generateTemplate(list, id, func) {
-
     var template = document.getElementById(id);
     var templateHtml = template.innerHTML;
     var listHtml = "";
 
     for (element in list) {
         listHtml += func(list, element, templateHtml);
-
     }
 
     return listHtml;

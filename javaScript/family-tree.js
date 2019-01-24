@@ -2,6 +2,7 @@ function getId() {
     var query = window.location.hash.substring(1);
     return query.split('/')[1];
 }
+
 httpGet();
 
 var i = 0;
@@ -22,7 +23,6 @@ function get(id) {
         if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
             var response = JSON.parse(xmlHttp.responseText);
             i = i + 1;
-
             var child = {
                 name: response.name,
                 id: response.id,
@@ -33,26 +33,20 @@ function get(id) {
                 id: response.matron.id,
                 img: response.matron.image_url_png
             }
-
             var sire = {
                 id: response.sire.id,
                 name: response.sire.name,
                 img: response.sire.image_url_png
             }
-
             if (i == 1) {
                 relatives.push(child);
             }
-
             if (matron.id == null || sire.id == null) {
                 displayInfo(relatives);
                 return;
             }
-
             relatives.push(matron);
             relatives.push(sire);
-
-
             if (i < 3 && matron.id != null) {
                 get(matron.id);
             }
@@ -67,13 +61,11 @@ function get(id) {
 
         }
     }
-
     xmlHttp.send();
     return parents;
 }
 
 function displayInfo(relatives) {
-    console.log(relatives);
     grid1 = [];
     grid2 = [];
     grid3 = [];
@@ -88,8 +80,6 @@ function displayInfo(relatives) {
     document.getElementById("mydiv1").innerHTML = generateTemplate(grid1, 'child');
     document.getElementById("mydiv2").innerHTML = generateTemplate(grid2, 'parent');
     document.getElementById("mydiv3").innerHTML = generateTemplate(grid3, 'grandparent');
-    //document.getElementById("sib").innerHTML = generateTemplate(siblings,'child');
-
 }
 
 function generateTemplate(dataObject, rel) {
@@ -98,6 +88,13 @@ function generateTemplate(dataObject, rel) {
     var listHtml = "";
 
     for (key in dataObject) {
+
+        if(!dataObject[key].img){
+            dataObject[key].img= "../Images/unk.png"
+        }
+        if(!dataObject[key].name){
+            dataObject[key].name= "John Doe"
+        }
 
         listHtml += templateHtml.replace(/{{name}}/g, dataObject[key].name)
             .replace(/{{href}}/g, '#kitty-profile/' + dataObject[key].id)

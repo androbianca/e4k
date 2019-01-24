@@ -62,6 +62,10 @@ Router.prototype = {
                 loadJsURL("/javaScript/family-tree.js");
             }
 
+            if(htmlName=="top-owners.html"){
+                loadJsURL("/javaScript/top-owners.js");
+            }
+
             xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                 if (this.readyState === 4 && this.status === 200) {
@@ -82,14 +86,11 @@ var loadJsURL = function(url) {
         if (!url) return false;
         var scripts = document.getElementsByTagName('script');
         for (var i = scripts.length; i--;) {
-            // *td
-            // better with substring or pos, thinking of // start
             if (scripts[i].src == url) return false;
         }
         return true;
     }
-
-    // Load js url
+    
     var insertJsUrl = function(url) {
         var script = document.createElement('script');
         script.setAttribute('src', url);

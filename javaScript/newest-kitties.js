@@ -12,10 +12,7 @@ function httpGet() {
     }
     
     xmlHttp.send();
-   
- 
 }
-
 
 function displayKitties(kitties) {
   document.getElementById("displayKitties").innerHTML = generateTemplate(kitties);
@@ -27,6 +24,12 @@ function generateTemplate(dataObject) {
     var listHtml = "";
 
     for (key in dataObject) {
+        if(!dataObject[key]["name"]){
+            dataObject[key]["name"] = 'John Doe';
+        }
+        if(!dataObject[key]["image_url_png"]){
+            dataObject[key]["image_url_png"] = "../Images/unk.png"
+        }
         listHtml += templateHtml.replace(/{{name}}/g, dataObject[key]["name"])
                                 .replace(/{{href}}/g, dataObject[key]["image_url_png"])
                                 .replace(/{{id}}/g, dataObject[key]["id"])           
