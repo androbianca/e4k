@@ -1,38 +1,31 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" type="text/css" href="/Style/family-tree.css">
+        <title>Family Tree</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="/Style/family-tree.css">
-    <title>Family Tree</title>
-</head>
-
-<body>
-    <div class="main-container">
-        <h1 class="title-txt">FamilyTree</h1>
-      
+    <body>
+        <div class="main-container">
+            <h1 class="title-txt">FamilyTree</h1>
             <div class="grid">
-              
-                    <div id="mydiv1" class="area" ></div>
-                    <div id="mydiv2" class="area" ></div>
-                    <div id="mydiv3" class="area" ></div>
-                    <div id="sib"  ></div>
+                <div id="mydiv1" class="area"></div>
+                <div id="mydiv2" class="area"></div>
+                <div id="mydiv3" class="area"></div>
+                <div id="sib"></div>
             </div>
-     
-    </div>
-</body>
+        </div>
 
+        <script type="text/template" id="family">
+            <div title="{{rel}}" class="content-box">
+                <p class="content-box__txt">{{name}}</p>
+                <a href="{{href}}">
+                    <img class="content-box__img" src="{{src}}" alt="kitty">
+                </a>                               
+            </div>
+        </script>
+    </body>
 </html>
-
-<script type="text/template" id="family">
-     
-        <div title="{{rel}}" class="content-box">
-            <p class="content-box__txt">{{name}}</p>
-            <a href="{{href}}">
-                <img class="content-box__img" src="{{src}}" alt="kitty">
-            </a>                               
-
-</div>
-</script>

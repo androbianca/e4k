@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>User profile</title>
-
     <link rel="stylesheet" type="text/css" href="/Style/user-profile.css">
 </head>
 
@@ -21,17 +20,14 @@
             <div class="kitties" id="kitty"></div>
         </div>
     </div>
+    <script id="list" type="text/template">
+        <a href="{{href}}">
+            <div class="kitty">
+                 <img src="{{src}}" alt="">
+                 <h4>{{name}}</h4>
+            </div>
+        </a>
+    </script>
 </body>
 
-
-
 </html>
-
-<script id="list" type="text/template">
-    <a href="{{href}}">
-                    <div class="kitty">
-                        <img src="{{src}}" alt="">
-                        <h4>{{name}}</h4>
-                    </div>
-                </a>
-</script>

@@ -7,10 +7,22 @@ function httpGet() {
     xmlHttp.onreadystatechange = function() {
         if(xmlHttp.readyState === 4 && xmlHttp.status === 200) {
             var response = JSON.parse(xmlHttp.responseText)
-            displayKitties(response.kitties);
+            kitties = response.kitties;          
+            kitties.sort(function (a, b) {
+                var ownerA = a.created_at
+                var ownerB = b.created_at;
+                if (ownerA < ownerB) {
+                  return 1;
+                }
+                if (ownerA > ownerB) {
+                  return -1;
+                }
+                return 0;
+              })        
+            displayKitties(kitties);
           }
-    }
-    
+          
+    }    
     xmlHttp.send();
 }
 

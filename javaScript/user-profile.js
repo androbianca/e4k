@@ -6,24 +6,30 @@ function getId() {
 }
 
 function httpGet() {
-    var cart = "";
+    var owners = "";
     var id = getId();
     const url = 'https://api.cryptokitties.co/kitties?owner_wallet_address=' + id + '&limit=100&offset=0';
     var xmlHttp = new XMLHttpRequest();
+
     xmlHttp.open("GET", url);
     xmlHttp.onreadystatechange = function () {
         if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
             var response = JSON.parse(xmlHttp.responseText);
+            if (response.owner){
+                window.location = '#404'
+            }
+            
             displayKitties(response.kitties);
             displayOwnerInfo(response);
         }
-
-        if (window.localStorage.getItem("cart")) {
-            cart = JSON.parse(window.localStorage.getItem("cart")).replace(/\\/g, '');
+        
+        if (window.localStorage.getItem("owners")) {
+            owners = JSON.parse(window.localStorage.getItem("owners")).replace(/\\/g, '');
         }
-        if (cart.match(id) == null) {
-            cart += id + ',';
-            window.localStorage.setItem("cart", JSON.stringify(cart));
+
+        if (!owners.includes(id)) {
+            owners += id + ',';
+            window.localStorage.setItem("owners", JSON.stringify(owners));
         }
     }
     xmlHttp.send();
@@ -34,6 +40,9 @@ function displayKitties(kitties) {
 }
 
 function displayOwnerInfo(response) {
+    if(! response.kitties[0].owner.nickname){
+        response.kitties[0].owner.nickname = 'John Doe';
+    }
     document.getElementById("name").innerHTML = response.kitties[0].owner.nickname;
     document.getElementById("total").innerHTML = response.total + ' kitties';
     document.getElementById("owner-img").src = 'https://www.cryptokitties.co/profile/profile-' + response.kitties[0].owner.image + '.png'

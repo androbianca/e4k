@@ -10,45 +10,43 @@
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="wrapper" id="page">
         <p class="title-txt">Top owners</p>
-
         <div class="top3-wrapper">
             <ol class="top3-container" id="displayTop3"></ol>
         </div>
-
-        <ol class="cards" id="displayOthers"> </ol>
-
+        <ol class="cards" id="displayOthers"></ol>
     </div>
-</body>
-</html>
-<script id="top-template" type="text/template">
-        <div class="owner-card">
-            <p class="number">{{place}}</p>
-        <a href="{{href}}">
-            <img class="card-img" src="{{img}}" alt="user">
-        </a>
-            <div class="card-info">
-                <p class="owner-name">{{name}}</p>
-                <div class="kitties-count">
-                    <img class="img" src="../Images/pisi.png" alt="pisi">
-                    <p>{{nr}} kitties</p>
+    <script id="top-template" type="text/template">
+            <div class="owner-card">
+                <p class="number">{{place}}</p>
+                <a href="{{href}}">
+                    <img class="card-img" src="{{img}}" alt="user">
+                </a>
+                <div class="card-info">
+                    <p class="owner-name">{{name}}</p>
+                        <div class="kitties-count">
+                            <img class="img" src="../Images/pisi.png" alt="pisi">
+                            <p>{{nr}} kitties</p>
+                        </div>
                 </div>
             </div>
-        </div>
-</script>
+        </script>
 
-<script id="top3-template" type="text/template">
- <li>
-    <div class="container">
-            <a href="{{href}}">
-              <img class="user-img" src={{img}} alt="user">
-             </a>
-            <div class="content">
-                <h2>{{place}}</h2>
-                <p>{{name}}</p>
-                <p>{{nr}} kitties</p>
-            </div>
-    </div>
- </li>
-</script>
+    <script id="top3-template" type="text/template">
+            <li>
+                <div class="container">
+                        <a href="{{href}}">
+                        <img class="user-img" src={{img}} alt="user">
+                        </a>
+                        <div class="content">
+                            <h2>{{place}}</h2>
+                            <p>{{name}}</p>
+                            <p>{{nr}} kitties</p>
+                        </div>
+                </div>
+         </li>
+        </script>
+</body>
+
+</html>

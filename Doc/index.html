@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="ro">
 
 <head>
     <meta charset="utf-8">
@@ -37,29 +37,44 @@
 
     <section id="user-type">
         <h2>Tipuri de utilizatori</h2>
-        <p property="schema:type">
+        <div property="schema:type">
             <p>Nu exista tipuri specifice de utilizatori, deoarece aplicatia nu foloseste sisteme de log-in/sign-in,
                 si nici nu are o baza de date ce trebuie gestionata.</p>
-        </p>
+            </div>
     </section>
 
     <section id="concepts-on-design">
         <h2 property="schema:blueprint">Arhitectura generala</h2>
-        <ul>
+        
             <p style="font-size:large;" property="schema:description">
                 Structura SPA
             </p>
-            <img src="../Application architecture/SPA.jpeg" height="600" width="800">
+            <img src="../Application_architecture/SPA.jpeg" alt="spa" height="600" width="800">
             <p property="schema:description">Avem pagina principala, ce va primi datele ce trebuie afisate in cadrul ei.Ea
                 este compusa din navbar, content si footer. Content este partea paginii ce variaza in functie de navigarile
                 utilizatorului.Pe baza rutelor accesate paginile corespunzatoare vor fi incarcate in pagina pricipala, iar
                 ele la randul lor is vor face requesturile necesare pentru obtinerea de date.
             </p>
+            <h4>Routele </h4>
+            <p property="schema:description">
+                Se foloseste un server http pentru a putea implementa o structura SPA. Ruta este formata din localhost si numele paginii si parametrii daca pagina respectiva are nevoie.
+                Parametrii sunt transmisi prin rute si ne ajuta la comunicarea dintre paginii astfel ca putem incarca in pagina datele in functie de alegerea utilizatorului. 
+                Pentru rutele invalide (404 not found) va aparea o pagina customizata.
+            </p>
 
-            <p>Aplicatia poate fi impartita in 2 module: Primul este la nivel de interactiune al utilizatorului, iar al doilea
-                la nivel de functionalitate.</p>
-            <img src="../Application architecture/modules.jpeg" height="500" width="700">
-            <li style="font-size:large;">
+            <h4>Requesturi</h4>
+            <div property="schema:description">
+                Apelam doar requesturi de get, deoarece nu avem o baza de date unde sa stocam datele.
+                Api-urile folosite sunt urmatoarele:
+               <p> "https://api.cryptokitties.co/kitties?limit=100&offset=0&generation=25" - pentru pagina "newest kitties"</p>
+               <p>  "https://api.cryptokitties.co/kitties/{{id-pisica}}" - pentru profilul pisicii si arborele genealogic</p>
+               <p>  "https://api.cryptokitties.co/kitties?owner_wallet_address={{wallet-adress}}=100&offset=0" - pentru profilul utilizatorului si top owners</p>
+
+                Limita pentru get-uri a fost de 20 de itemi, astfel ca sunt unele restrictii pentru pagina newest kitties si profilul utilizatorului.
+                Pentru ca nu avem la dispozitie un API pentru a accesa mai multi utilizatori, pagina de top users afiseaza topul proprietarilor accesati de utilizator pana la momentul respectiv.
+    
+            </div>
+
                 Ofera urmatoarele pagini:
                 <ul>
                     <li style="font-size:large;">Profilul pisicii -> contine informatiile unei pisici</li>
@@ -70,8 +85,7 @@
                     <li style="font-size:large;">Pagina de generare rapoarte -> contine un formular pe baza caruia vor fi
                         generate rapoartele</li>
                 </ul>
-            </li>
-        </ul>
+       
     </section>
 
 
@@ -136,7 +150,7 @@
                 va fi downloadat in calculatorul utilizatorului.</li>
         </ul>
 
-        <img src="../Application architecture/UML diagrams/Generate svg-png.jpeg" height="600" width="800">
+        <img src="../Application_architecture/UML_diagrams/Generate_svg-png.jpeg" alt="" height="600" width="800">
 
         <h4>2.Display the top owners</h4>
         <ul property="schema:description">
@@ -148,7 +162,7 @@
                 este redirectat catre pagina "404 not found".</li>
         </ul>
 
-        <img src="../Application architecture/UML diagrams/top-owners.jpeg" height="600" width="800">
+        <img src="../Application_architecture/UML_diagrams/top-owners.jpeg" alt="" height="600" width="800">
 
         <h4>3.Display the newest kitties</h4>
         <ul property="schema:description">
@@ -160,7 +174,7 @@
                 "404 not found".</li>
         </ul>
 
-        <img src="../Application architecture/UML diagrams/newest-kitties.jpeg" height="600" width="800">
+        <img src="../Application_architecture/UML_diagrams/newest-kitties.jpeg" alt="" height="600" width="800">
 
         <h4>4.Display the kitty profile</h4>
         <ul property="schema:description">
@@ -181,7 +195,7 @@
         Profilul pisicii poate fi accesat si din top owners -> select owner -> select kitty of the owner;pe aceleasi principii descrise
         mai sus.
 
-        <img src="../Application architecture/UML diagrams/kitty-profile.jpeg" height="600" width="800">
+        <img src="../Application_architecture/UML_diagrams/kitty-profile.jpeg" alt="" height="600" width="800">
 
         <h4>5.Display the owner profile</h4>
         <ul property="schema:description">
@@ -202,7 +216,7 @@
         Profilul proprietarului poate fi accesat si din the newest kitties -> select kitty -> select owner; pe aceleasi principii
         descrise mai sus.
 
-        <img src="../Application architecture/UML diagrams/owner-profile.jpeg" height="600" width="800">
+        <img src="../Application_architecture/UML_diagrams/owner-profile.jpeg" alt="" height="600" width="800">
 
         <h4>6.Display the family tree</h4>
         <ul property="schema:description">
@@ -226,7 +240,7 @@
         Profilul pisicii poate fi accesat si din top owners -> select owner -> select kitty of the owner;pe aceleasi principii descrise
         mai sus.
 
-        <img src="../Application architecture/UML diagrams/family-tree.jpeg" height="600" width="800">
+        <img src="../Application_architecture/UML_diagrams/family-tree.jpeg" alt="" height="600" width="800">
 
         <h4>7.Display the kitty child profile</h4>
         <ul property="schema:description">
@@ -254,7 +268,7 @@
         Profilul pisicii poate fi accesat si din top owners -> select owner -> select kitty of the owner;pe aceleasi principii descrise
         mai sus.
 
-        <img src="../Application architecture/UML diagrams/kitty-child.jpeg" height="600" width="800">
+        <img src="../Application_architecture/UML_diagrams/kitty-child.jpeg" alt="" height="600" width="800">
 
         <h4>7.Display the kitty parent profile</h4>
         <ul property="schema:description">
@@ -282,7 +296,7 @@
         Profilul pisicii poate fi accesat si din top owners -> select owner -> select kitty of the owner;pe aceleasi principii descrise
         mai sus.
 
-        <img src="../Application architecture/UML diagrams/parent-profile.jpeg" height="600" width="800">
+        <img src="../Application_architecture/UML_diagrams/parent-profile.jpeg" alt="" height="600" width="800">
     </section>
 
     <section id="references">

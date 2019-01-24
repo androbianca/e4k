@@ -9,9 +9,9 @@
 }
 
 .wrapper {
-    margin:40px 100px 20px 100px;  
+    margin:100px 100px 20px 100px;  
     display: flex;
-    justify-content: center; 
+    justify-content: flex-start; 
     flex-direction: column;
     align-items: center;
 }
@@ -229,6 +229,11 @@ li:nth-of-type(2):not(:hover) .user-img {
 
  .title-txt{
     font-size: 20px;
+ }
+
+ #page{
+   
+
  }
 }
       

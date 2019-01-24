@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Documentatie ATTER - Attendance Web Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+</head>
+
+<body prefix="schema: http://schema.org/">
+    <header>
+        <h1 property="schema:name">Attendance Web Tracker (<span role="doc-subtitle" property="schema:alternateName">Atter</span>)</h1>
+    </header>
+    <div role="contentinfo">
+        <dl>
+            <dt>Authors</dt>
+            <dd>Zapan Calin-George, Macovei Rares Alexandru, Onica Marian-Viorel</dd>
+        </dl>
+    </div>
+    <section typeof="sa:Categorii">
+        <h2>Cuprins</h2>
+        <ol role="directory">
+            <li><a href="#descriere-proiect">Descrierea proiectului</a></li>
+            <li><a href="#idei-concepte-design">Idei/Concepte importante privind design-ul general</a></li>
+            <li><a href="#interactiune-utilizator">Maniera de interactiune cu utilizatorul</a></li>
+            <li><a href="#cod-sursa">Maniera de folosire a sistemului de management al codului-sursa ales</a></li>
+            <li><a href="#membrii-echipei">Membrii echipei</a></li>
+            <li><a href="#use-case-diagrams">Scenarii de utilizare si diagrame Use Case</a></li>
+            <li><a href="#class-diagrams">Diagrame de clase</a></li>
+            <li><a href="#stocarea-datelor">Stocarea datelor</li>
+            <li><a href="#API">Comunicarea cu serverul(API)</li>
+        </ol>
+    </section>
+    <section typeof="sa:Results" id="descriere-proiect">
+        <h2>1. Descrierea proiectului</h2>
+        <blockquote>
+            <p>
+                Ideea proiectului este de a concepe o aplicatie Web menita sa facilitieze procesul de inregistrare
+                a prezentei studentilor in cadrul cursurilor / laboratoarelor / seminariilor dar si oferirea unei
+                modalitati de a tine evidenta participarii persoanelor in cadrul unor evenimente. Aplicatia va oferi
+                suport atat pentru participanti, facilitand procesul de contorizare al prezentei cat si pentru
+                persoanele
+                care doresc vizualizarea situatiilor. Acestia din urma vor dispune de modalitati de a oferi punctaje,
+                notite etc. fiecaruia dintre cei prezenti.
+            </p>
+        </blockquote>
+    </section>
+    <section id="idei-concepte-design">
+        <h2>2. Idei/Concepte importante privind design-ul general</h2>
+        <figure typeof="sa:Image1">
+            <img src="img/landing_page.jpg">
+            <figcaption>
+                fig 2.1 Pagina principala
+            </figcaption>
+        </figure>
+        <blockquote>
+            <p>
+                Mai sus este prezentata o imagine de ansamblu a paginii principale, pagina de care utilizatorul va fi
+                intampinat
+                atunci cand intra prima data pe site. De aici, utilizatorul va avea optiunea sa afle mai multe detalii
+                despre aplicatie,
+                sa se logheze in aplicatie sau sa isi creeze un cont nou daca nu dispune deja de unul.
+            </p>
+        </blockquote>
+        <figure typeof="sa:Image2">
+            <img src="img/register.jpg">
+            <figcaption>
+                fig 2.2 Pagina de Inregistrare
+            </figcaption>
+        </figure>
+        <blockquote>
+            <p>
+                Prin intermediul paginii de Inregistrare, utilizatorul are posibilitatea de a-si crea un cont pentru
+                a avea acces la facilitatile aplicatiei.
+            </p>
+            <hr>
+            <p>
+                <b>Nota:</b> Pentru crearea unui cont de utilizator in cadrul aplicatiei, este obligatorie detinerea si
+                utilizarea
+                unei adrese de e-mail de tipul "prenume.nume@info.uaic.ro" aplicatia folosindu-se de aceasta pentru a
+                oferi
+                informatii si statistici personalizate fiecarui utilizator in parte.
+            </p>
+        </blockquote>
+        <figure typeof="sa:Image3">
+            <img src="img/profile.jpg">
+            <figcaption>
+                fig 2.3 Pagina de Profil
+            </figcaption>
+        </figure>
+        <blockquote>
+            <p>
+                In interiorul paginii de profil, Studentul va avea posibilitatea de a-si schimba datele contului.
+                De asemenea, ii vor fi prezentate materiile la care este inscris, relativ la anul si semestrul curent.
+                <br><br>
+                Similar este structurata si pagina de profil a Profesorilor, insa acestuia ii vor fi prezentate
+                materiile
+                pe care le preda.
+            </p>
+        </blockquote>
+        <figure typeof="sa:Image4">
+            <img src="img/presence_generation.jpg">
+            <figcaption>
+                fig 2.4 Creare lista de prezenta
+            </figcaption>
+        </figure>
+        <figure typeof="sa:Image5">
+            <img src="img/assign_mark.jpg">
+            <figcaption>
+                fig 2.5 Acordare punctaj
+            </figcaption>
+        </figure>
+        <figure typeof="sa:Image6">
+            <img src="img/assign_note.jpg">
+            <figcaption>
+                fig 2.6 Alocare notita
+            </figcaption>
+        </figure>
+        <figure typeof="sa:Image7">
+            <img src="img/group_presence.jpg">
+            <figcaption>
+                fig 2.7 Vizualizare listei de prezenta pentru profesori
+            </figcaption>
+        </figure>
+        <figure typeof="sa:Image14">
+            <img src="img/download_stats.jpg">
+            <figcaption>
+                fig 2.8 Descarcarea Statisticilor
+            </figcaption>
+        </figure>
+        <blockquote>
+            <p>
+                Prin intermediul acestei pagini, Profesorul va putea vizualiza starea curenta a prezentelor si va putea
+                aloca puncte si notite fiecarui student care si-a inregistrat cu succes prezenta. Tot din aceasta
+                pagina
+                se genereaza codul unic cu ajutorul caruia studentii isi vor contoriza prezenta si se vor putea
+                descarca statistici pentru fiecare participant.
+            </p>
+        </blockquote>
+        <figure typeof="sa:Image8">
+            <img src="img/colleagues.jpg">
+            <figcaption>
+                fig 2.9 Vizualizarea listei de prezenta
+            </figcaption>
+        </figure>
+        <figure typeof="sa:Image9">
+            <img src="img/presences.jpg">
+            <figcaption>
+                fig 2.10 Pagina de inregistrare a prezentei
+            </figcaption>
+        </figure>
+        <figure typeof="sa:Image10">
+            <img src="img/marks.jpg">
+            <figcaption>
+                fig 2.11 Vizualizare punctajelor pentru studenti
+            </figcaption>
+        </figure>
+        <figure typeof="sa:Image11">
+            <img src="img/notes.jpg">
+            <figcaption>
+                fig 2.12 Vizualizare notitelor pentru studenti
+            </figcaption>
+        </figure>
+        <blockquote>
+            <p>
+                In cadrul paginii prezentate mai sus, Studentii vor putea vizualiza starea curenta a prezentei,
+                notele obtinute, dar si notitele alocate de catre profesor.
+                Tot aici vor dispune de optiunea de a se adauga pe lista de prezenta, utilizand codul unic generat
+                si distribuit de catre profesor la inceputul activitatii.
+            </p>
+        </blockquote>
+    </section>
+    <section id="interactiune-utilizator">
+        <h2>3. Maniera de interactiune cu utilizatorul</h2>
+        <blockquote>
+            <h3>Studenti / Participanti</h3>
+            <p>
+                Studentii sau participantii la eveniment vor avea posibilitatea de a se inregistra ca fiind prezenti
+                la cursurile / laboratoarele / seminariile / evenimentele disponibile. Pentru a putea face acest lucru
+                persoana trebuie sa detina un cont de utilizator. Dupa logarea in contul sau, utilizatorul va
+                fi redirectionat
+                catre pagina sa de profil, de unde va putea alege una dintre materiile disponibile pentru care sa isi
+                inregistreze
+                prezenta. Pentru ca acest lucru sa fie facut intr-un mod sigur si pentru a descuraja inregistrarea
+                prezentelor
+                fraudulente, fiecare participant va fi nevoit sa introduca un cod unic ce va fi pus la dispozitie de
+                catre
+                profesor / organizator la inceputul activitatii.
+            </p>
+        </blockquote>
+        <figure typeof="sa:Image12">
+            <img src="img/code_generation.jpg">
+            <figcaption>
+                fig 3.1 Generarea codului de prezenta
+            </figcaption>
+        </figure>
+        <blockquote>
+            <h3>Profesori / Organizatori</h3>
+            <p>
+                Profesorii sau organizatorii vor avea posibilitatea de a desfasura o serie de actiuni in cadrul
+                aplicatiei.
+                Acestia vor putea alege una dintre activitatile disponibile, si vor putea genera un numar de coduri de
+                prezenta,
+                ce vor fi apoi distribuite participantilor.
+
+                De asemenea, vor putea vizualiza starea curenta a prezentelor si vor putea acorda punctaje, notite etc.
+                fiecarei
+                persoane prezente.
+
+                Totodata, vor avea posibilitatea de a vizualiza rapoarte intermediare sau finale privind prezenţele şi
+                punctajele
+                acumulate de un individ / grup, inclusiv statistici, comparaţii, filtrări multi-criteriale etc.
+            </p>
+        </blockquote>
+        <figure typeof="sa:Image13">
+            <img src="img/add_presence.jpg">
+            <figcaption>
+                fig 3.2 Adaugarea unei prezente
+            </figcaption>
+        </figure>
+    </section>
+    <section id="cod-sursa">
+        <h2>4. Maniera de folosire a sistemului de management al codului-sursa ales</h2>
+        <blockquote>
+            <p>
+                Pentru management-ul codului-sursa am ales sa folosim GitHub. Codul este disponibil la adresa
+                <a href="https://github.com/calinzapan/atter">Atter</a>
+                unde pot fi vizualizate contributiile fiecaruia.
+            </p>
+        </blockquote>
+    </section>
+    <section typeof="sa:AuthorsList" id="membrii-echipei">
+        <h2>5. Membrii echipei</h2>
+        <ul>
+            <li typeof="sa:ContributorRole" property="schema:author">
+                <a href="https://github.com/calinzapan" typeof="schema:Person">
+                    <span property="schema:givenName">
+                        Calin-George
+                    </span>
+                    <span property="schema:familyName">
+                        Zapan
+                    </span>
+                </a>
+            </li>
+            <li typeof="sa:ContributorRole" property="schema:author">
+                <a href="https://github.com/macoveirares" typeof="schema:Person">
+                    <span property="schema:givenName">
+                        Rares Alexandru
+                    </span>
+                    <span property="schema:familyName">
+                        Macovei
+                    </span>
+                </a>
+            </li>
+            <li typeof="sa:ContributorRole" property="schema:author">
+                <a href="https://github.com/viorelmarian" typeof="schema:Person">
+                    <span property="schema:givenName">
+                        Marian-Viorel
+                    </span>
+                    <span property="schema:familyName">
+                        Onica
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <section typeof="sa:UseCase" id="use-case-diagrams">
+        <h2>6. Scenarii de utilizare si diagrame Use Case</h2>
+        
+            <div typeof="sa:Scenario1" property="schema:scenario">
+                <img src="img/usecase1.png" alt="usecase1">
+                <img src="img/loginuse.png" alt="usecasediagram1">
+            </div>
+            <div typeof="sa:Scenario2" property="schema:scenario">
+                <img src="img/usecase2.png" alt="usecase1">
+                <img src="img/registeruse.png" alt="usecasediagram1">
+            </div>
+            <div typeof="sa:Scenario3" property="schema:scenario">
+                <img src="img/usecase3.png" alt="usecase1">
+                <img src="img/teacheruse.png" alt="usecasediagram1">
+            </div>
+            <div typeof="sa:Scenario4" property="schema:scenario">
+                <img src="img/usecase4.png" alt="usecase1">
+                <img src="img/tokenuse.png" alt="usecasediagram1">
+            </div>
+            <div typeof="sa:Scenario5" property="schema:scenario">
+                <img src="img/usecase5.png" alt="usecase1">
+                <img src="img/markuse.png" alt="usecasediagram1">
+            </div>
+
+    </section>
+    <section typeof="sa:UMLClasses" id="class-diagrams">
+        <h2>7. Diagrame de clase</h2>
+        <p>In diagrama de mai jos pot fi observate principalele clase ale aplicatiei. Vom folosi clasa User ca o entitate de baza, din care vom deriva apoi entitatile Student si Profesor. Acesta va agrega o serie de materii(Subjects) pe care fie le preda, fie le studiaza. Clasa Student, pe langa proprietatile de baza, va dispune de cateva colectii(Note, Prezente, Notite). Aceste colectii vor contine obiecte de tip corespunzator, asa cum se poate observa si din diagrama UML atasata (relatiile de agregare). Pe langa metodele generale, mostenite de la clasa User(Login, Register, EditProfile), Studentul dispune si de metoda AddPresence(), cu ajutorul careia se va putea marca ca fiind prezent in cadrul unui Seminar/Laborator. In cazul celeilalte entitati principale, si anume Profesor, lucrurile stau insa, fundamental diferit. Acesta va avea rolul de Concrete Creator, in cadrul unu sablon de tip Factory. Acesta va putea crea obiecte de diferite tipuri: Note(pe care le atribuie unui Student), Prezente(prin generare de token), Notite(pe care le trimite catre un Student).  </p>
+        <img src="img/UmlClassesDiagram.png" alt="umclasses">
+    </section>
+
+    <section typeof="sa:UMLClasses" id="stocarea datelor">
+        <h2>7. Stocarea Datelor</h2>
+        <p>Ne-am propus sa stocam informatiile relvante(Note, Prezente, Notite) intr-o baza de date nerelationala (MongoDB), atunci cand sesiunea curenta ia sfarsit(token-ul generat de profesor expira). Pana in acel punct ele vor fi salvate in Local Storage. Am optat pentru aceasta baza de data, intrucat este usor scalabila si orientata catre User Data Management. De asemenea, conversia/mapparea entitatilor din aplicatie la database objects nu va fi necesara, ceea ce ne va permite sa prelucram mult mai usor datele. </p>
+        
+    </section>
+
+    
+    <section typeof="sa:API" id="API">
+        <h2>7. Comunicarea cu serverul si API</h2>
+        <p>
+            Clientul va interactiona cu Serverul printr-un RESTful API, a carui structura de baza poate fi vizualizata la urmatorul <a href="https://app.swaggerhub.com/apis/Unitender/unitender/1.0.0">link</a>
+        </p>
+        
+    </section>
+</body>
+
+</html>

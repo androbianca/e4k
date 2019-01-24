@@ -20,6 +20,10 @@ function get(id) {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", url);
     xmlHttp.onreadystatechange = function () {
+        if (xmlHttp.status==400){
+            window.location = '#404'
+            return;
+        }
         if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
             var response = JSON.parse(xmlHttp.responseText);
             i = i + 1;

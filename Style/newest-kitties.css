@@ -8,6 +8,9 @@
     color: rgb(165, 165, 165); 
 }
 
+img{
+    height: 400px;
+}
 
 .main-container {
     display: flex;
@@ -56,7 +59,6 @@
 
 
 @media screen and (max-width: 835px) {
-       
 
  .title-txt {
      font-size: 20px;

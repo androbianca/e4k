@@ -12,6 +12,10 @@ function httpGet() {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", url);
     xmlHttp.onreadystatechange = function () {
+    
+       if (xmlHttp.status==400){
+           window.location = '#404'
+       }
         if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
             var response = JSON.parse(xmlHttp.responseText);
             var kitty = {
@@ -29,7 +33,7 @@ function httpGet() {
                 owner_address: response.owner.address,
             }
             displayInfo(kitty);
-        }
+        }     
     }
     xmlHttp.send();
 }
