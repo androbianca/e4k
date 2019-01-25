@@ -127,14 +127,12 @@
             sunt preluate direct de la sursa prin API-uri publice puse la dispozitie.</p>
         <p style="font-weight:600;">2.Date externe</p>
         <p property="schema:description">Pentru a folosi informatiile primite prin requesturi api, ele vor fi transformate
-            in obiecte de tip javascript.Fisierele json sunt preluate si mapate la obiecte javascript.</p>
+            in obiecte de tip javascript.Obiectele json sunt preluate si mapate la obiecte javascript.</p>
     </section>
 
     <section id="storage">
         <h2>Soluţiile de stocare disponibile la nivel de client</h2>
-        <p property="schema:description">Elementele(pisica/proprietar) accesate in trecut sunt salvate in liste. Inainte
-            ca un request api sa fie facut, listele sunt verificate in functie de id-ul elementului, iar daca exista deja
-            in listele respective, requestul nu va mai avea loc.</p>
+        <p property="schema:description">Unele elemente sunt stocate in liste, pentru o prelucrare mai usoara a datelor.</p>
     </section>
 
     <section id="use-cases">
@@ -297,6 +295,35 @@
         mai sus.
 
         <img src="../Application_architecture/UML_diagrams/parent-profile.jpeg" alt="" height="600" width="800">
+    </section>
+
+    <section id="guide">
+        <h2>Manual de utilizare</h2>
+       <p>HomePage - Ce ofera o scurta descriere a aplicatiei.</p>
+       Apsand pe meniu va aparea un pop-up de unde puteti selecta urmatoarele :
+       <p>Newest kitties - Ce va ofera o lista cu cele mai noi pisci in functie de data crearii lor.</p>
+       <p>Top owners - Ce va ofera o lista cu toti proprietarii accesati de voi pana la momentul respectiv, ordonati in functie de numarul depisici detinute.</p>
+       Din Newest kitties puteti ajunge pe profilul pisicii. Aici puteti vedea informatii generale dspre pisica respectiva :
+       nume, proprietar,parinti etc. Din aceasta pagina puteti ajunge la : profilul proprietarului, la arborele genealogic , sau la profilul parintilor/
+       copiilor.
+       <p>Profilul proprietarului va contine cateva piscii detinute de acesta. De pe aceasta pagina puteti accesa profilul pisicii.</p>
+       <p>Arborele genealogic ofera parintii si bunicii pisicii.De pe aceasta pagina puteti accesa profilul pisicii.</p>
+    </section>
+
+    
+    <section id="future-plans">
+        <h2>Directii viitoare</h2>
+       <p>O mai buna performanta a aplicatiei si partea de genarare de rapoarte.</p>
+    </section>
+
+    
+    <section id="info">
+        <h2>Alte informatii</h2>
+       <p>Fisierele css si javascript sunt incarcate o data cu html-ul paginii respective.Incarcarea atat
+           a html-ului cat si a js-ului se face cu ajutorul unor functii javascript si template-uri.
+           Pagina default este home page-ul, ce descrie putin aplicatia oficiala.
+           Am pasat date de la o pagina la alta atat prin url cat si prin localStorage.
+       </p>
     </section>
 
     <section id="references">
